@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+
 const sequelize = require('../connection/config.js');
 
 class Reviews extends Model {}
 
 Reviews.init(
   {
-    id: {
+    id: { 
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
