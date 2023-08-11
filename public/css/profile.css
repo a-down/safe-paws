@@ -39,7 +39,6 @@ main {
 .upcoming-wrapper {
   width: 100%;
   background-color: var(--brand-light);
-  box-shadow: var(--brand-shadow);
 }
 
 .upcoming-bookings {
