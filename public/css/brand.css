@@ -3,3 +3,29 @@
   --brand-light: #F5F9FC;
   --brand-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Markazi Text', serif;
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 30px;
+}
+
+p, a {
+  font-family: 'Hubballi', cursive;
+  font-size: 24px;
+} 

@@ -1,0 +1,44 @@
+header, 
+.branding, 
+nav,
+.header-content,
+footer,
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header, footer {
+  background-color: var(--brand-primary);
+  height: 60px;
+  width: 100%;
+}
+
+footer {
+  height: 100px;
+}
+
+.header-content {
+ justify-content: space-between;
+}
+
+.header-content, main, .footer-content {
+  width: 80%;
+}
+
+.branding, nav {
+  gap: 25px;
+}
+
+header h3 {
+  color: white;
+}
+
+main {
+  height: 100px;
+}
+
+.footer-content {
+  justify-content: space-between;
+}
