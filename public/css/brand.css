@@ -10,7 +10,8 @@ h3,
 h4, 
 h5, 
 h6, 
-.btn-primary {
+.btn-primary,
+.btn-primary-opp {
   font-family: 'Markazi Text', serif;
   font-weight: 700;
 }
@@ -44,5 +45,16 @@ p, a {
   font-size: 30px;
   color: white;
   border: none;
+  box-shadow: var(--brand-shadow);
+}
+
+.btn-primary-opp {
+  width: 245px;
+  height: 80px;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 30px;
+  color: black;
+  border: 2px solid var(--brand-primary);
   box-shadow: var(--brand-shadow);
 }

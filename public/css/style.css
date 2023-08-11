@@ -18,6 +18,11 @@ header, footer {
 
 footer {
   height: 100px;
+  margin-top: 60px;
+}
+
+footer img {
+  border-radius: 100px;
 }
 
 .header-content {
