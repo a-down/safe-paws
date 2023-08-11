@@ -1,0 +1,15 @@
+main, .profile-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+}
+
+.profile-heading {
+  width: 80%;
+  height: 167px;
+  justify-content: space-between;
+}
