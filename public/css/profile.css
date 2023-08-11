@@ -54,6 +54,10 @@ main {
   padding: 10px;
 }
 
+.swiper-wrapper {
+  margin-left: 60px;
+}
+
 .swiper-slide {
   min-width: 220px;
   height: 160px;
@@ -67,6 +71,10 @@ main {
 
 .swiper-slide p {
   font-size: 24px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: var(--brand-primary)
 }
 
 .upcoming-bookings button {
