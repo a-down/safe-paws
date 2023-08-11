@@ -6,6 +6,11 @@
 
   <link rel="stylesheet" href="./css/reset.css" />
 
+    <!-- Swiper CSS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +22,7 @@
   <link rel="stylesheet" href="./css/profile.css" />
 
   <title>Safe Paws</title>
+
 </head>
 
 <body>
@@ -42,17 +48,67 @@
       </div>
     </section>
 
+
     <div class="upcoming-wrapper">
       <section class="upcoming-bookings">
         <h2>Upcoming Bookings</h2>
-        <div>
-          <img src="https://placehold.co/280x160"/>
-          <img src="https://placehold.co/280x160"/>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <button class="btn-primary add-booking-btn">Add a Booking!</button>
       </section>
     </div>
 
+    
     <section class="account-section">
       <h2>Account Settings</h2>
       <div class="account-information">
@@ -63,12 +119,20 @@
         <p>Pets: Fido, Skittles</p>
         <div class="account-btn-wrapper">
           <button class="btn-primary-opp update-account-btn">Update Account</button>
-          <button class="btn-primary-opp update-account-btn">Add Pet</button>
-          <button class="btn-primary-opp update-account-btn">Remove Pet</button>
+          <button class="btn-primary-opp add-pet-btn">Add Pet</button>
+          <button class="btn-primary-opp remove-pet-btn">Remove Pet</button>
         </div>
       </div>
     </section>
   </main>
+
+
+
+
+
+
+
+
 
 
   <!-- update account -->
@@ -135,12 +199,18 @@
     </div>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+  integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+  crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="./assets/js/script.js"></script>  
+  <script src="./js/script.js"></script>  
+  <script src="./js/swiper.js"></script>
   
 </body>
 </html>
