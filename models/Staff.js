@@ -1,12 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../connection/config.js');
 
-class Staff extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Staff extends Model {}
 
 Staff.init(
   {
@@ -19,16 +14,28 @@ Staff.init(
     staff_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      isAlphanumeric: true
     },
     services: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     staff_img: {
-
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    service_id:{
-        
+    service_id: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'staff',
+  },
 )
+
+module.exports = Staff;

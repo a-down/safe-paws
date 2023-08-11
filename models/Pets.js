@@ -1,12 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../connection/config.js');
 
-class Services extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Pets extends Model {}
 
 Pets.init(
   {
@@ -21,17 +16,29 @@ Pets.init(
       allowNull: false,
     },
     pet_type: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     pet_img: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     special_details: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
-)
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'pets',
+  },
+);
+
+module.exports = Pets;

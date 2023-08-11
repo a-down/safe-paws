@@ -1,12 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../connection/config.js');
 
-class Reviews extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Reviews extends Model {}
 
 Reviews.init(
   {
@@ -22,10 +18,17 @@ Reviews.init(
     },
     review_content: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
-  },
-})
+    },
+},
+{
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'reviews',
+},
+);
+
+module.exports = Reviews;

@@ -1,12 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../connection/config.js');
 
-class Bookings extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Bookings extends Model {}
 
 Bookings.init(
   {
@@ -21,18 +16,29 @@ Bookings.init(
       allowNull: false,
     },
     date: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     user_id: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     pet_id: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     service_received: {
         type: DataTypes.STRING,
         allowNull: true,
     }
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'bookings',
+  },
 )
+
+module.exports = Bookings;
