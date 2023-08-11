@@ -1,0 +1,78 @@
+main, 
+.profile-heading,
+.upcoming-bookings,
+.upcoming-wrapper,
+.account-section,
+.account-information,
+.account-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-heading,
+.upcoming-bookings,
+.account-section {
+  width: 80%;
+}
+
+.profile-heading {
+  height: 167px;
+  justify-content: space-between;
+}
+
+.profile-heading img {
+  border-radius: 100px;
+  box-shadow: var(--brand-shadow);
+}
+
+.upcoming-wrapper {
+  width: 100%;
+  background-color: var(--brand-light);
+  box-shadow: var(--brand-shadow);
+}
+
+.upcoming-bookings {
+  flex-direction: column;
+  height: 386px;
+  margin: 10px 0 10px 0;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.upcoming-bookings button {
+  margin: 0 auto 0 auto;
+}
+
+.account-section {
+  margin-top: 20px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.account-information {
+  border: 1px solid black;
+  padding: 12px 24px 12px 24px;
+  width: 100%;
+  min-height: 300px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 48px;
+  box-shadow: var(--brand-shadow);
+}
+
+.account-btn-wrapper {
+  margin: 40px 0 20px 0;
+  width: 100%;
+  gap: 20px;
+  justify-content: flex-start;
+}
