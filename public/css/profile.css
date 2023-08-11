@@ -76,3 +76,12 @@ main {
   gap: 20px;
   justify-content: flex-start;
 }
+
+form {
+  margin: 100px;
+}
+
+fieldset {
+  border: none;
+  height: 60px;
+}
