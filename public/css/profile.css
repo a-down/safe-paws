@@ -1,4 +1,7 @@
-main, .profile-heading {
+main, 
+.profile-heading,
+.upcoming-bookings,
+.upcoming-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,10 +9,32 @@ main, .profile-heading {
 
 main {
   width: 100%;
+  flex-direction: column;
+}
+
+.profile-heading,
+.upcoming-bookings {
+  width: 80%;
 }
 
 .profile-heading {
-  width: 80%;
   height: 167px;
   justify-content: space-between;
+}
+
+.upcoming-wrapper {
+  width: 100%;
+  background-color: var(--brand-light);
+}
+
+.upcoming-bookings {
+  flex-direction: column;
+  height: 386px;
+  margin: 10px 0 10px 0;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.upcoming-bookings button {
+  margin: 0 auto 0 auto;
 }
