@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bulma -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- MDBootstrap -->
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+  rel="stylesheet"/>
 
   <!-- CSS Reset File -->
   <link rel="stylesheet" href="./css/reset.css" />
@@ -120,6 +122,8 @@
     </div>
 
 
+
+
     <section class="account-section">
       <h2>Account Settings</h2>
       <div class="account-information">
@@ -129,13 +133,46 @@
         <p>Address: 123 Chicago Rd, Chicago, IL 55555</p>
         <p>Pets: Fido, Skittles</p>
         <div class="account-btn-wrapper">
-          <button class="btn-primary-opp update-account-btn">Update Account</button>
+          <button class="btn-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
           <button class="btn-primary-opp add-pet-btn">Add Pet</button>
           <button class="btn-primary-opp remove-pet-btn">Remove Pet</button>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Update Account Modal -->
+  <div class="modal fade" id="updateAccountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Account</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-outline">
+              <input type="email" id="typeEmail" class="form-control" />
+              <label class="form-label" for="typeEmail">Update Email</label>
+            </div>
+            <div class="form-outline">
+              <input type="text" id="typeText" class="form-control" />
+              <label class="form-label" for="typeText">Update Username</label>
+            </div>
+            <div class="form-outline">
+              <input type="password" id="typePassword" class="form-control" />
+              <label class="form-label" for="typePassword">Update Password</label>
+            </div>
+            <div class="form-outline">
+              <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+              <label class="form-label" for="textAreaExample">Update Address</label>
+            </div>
+            <button type="submit" class="form-button">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -198,7 +235,6 @@
 
 
 
-
   <footer>
     <div class="footer-content">
       <a>Contact Us</a>
@@ -210,8 +246,25 @@
     </div>
   </footer>
 
+
+
+
+
+
+
+
+
+
+
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- MDB -->
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+  ></script>
 
   <!-- jQuery -->
   <script

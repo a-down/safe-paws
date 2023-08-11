@@ -78,8 +78,10 @@ main {
 }
 
 .upcoming-bookings button {
-  margin: 10px auto 10px 0;
+  margin: 10px auto 10px 40px;
 }
+
+
 
 .account-section {
   margin-top: 20px;
@@ -115,4 +117,18 @@ form {
 fieldset {
   border: none;
   height: 60px;
+}
+
+#updateAccountModal form {
+  margin: 10px 10% 0 10%;
+  width: 80%;
+}
+
+#updateAccountModal h5 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-outline {
+  margin-bottom: 20px;
 }
