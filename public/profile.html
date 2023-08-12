@@ -30,6 +30,9 @@
   <link rel="stylesheet" href="./css/brand.css" />
   <link rel="stylesheet" href="./css/style.css" />
 
+  <!-- favicon -->
+  <link rel="icon" href="./img/favicon.ico">
+
   <!-- HANDLEBARS CUTTOFF -->
   <link rel="stylesheet" href="./css/profile.css" />
 
@@ -40,12 +43,12 @@
   <header>
     <div class="header-content">
       <div class="branding">
-        <img src="/public/img/pawprint.png"/>
+        <img src="./img/pawprint.png"/>
         <h3>Safe Paws</h3>
       </div>
       <nav>
         <a>Our Team</a>
-        <img src="/public/img/user.png"/>
+        <img src="./img/user.png"/>
       </nav>
     </div>
   </header>
@@ -166,7 +169,7 @@
               <textarea class="form-control" id="address-input" rows="4"></textarea>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
-            <button type="submit" class="form-button">Update</button>
+            <button type="submit" class="form-button" id="update-mdl-btn">Update</button>
           </form>
         </div>
       </div>
@@ -189,7 +192,7 @@
               <label class="form-label" for="pet-name-input">Pet Name</label>
             </div>
             <div class="select-outline">
-            <select class="form-control" id="pet-type-select">
+            <select name ="type" class="form-control" id="pet-type-select">
               <option selected>Pet Type</option>
               <option value="1">Dog</option>
               <option value="2">Cat</option>
@@ -201,7 +204,7 @@
               <textarea class="form-control" id="pet-details-input" rows="4"></textarea>
               <label class="form-label" for="pet-details-input">Enter special instructions or special details.</label>
             </div>
-            <button type="submit" class="form-button">Add Pet</button>
+            <button type="submit" class="form-button" id="add-mdl-btn">Add Pet</button>
           </form>
         </div>
       </div>
@@ -227,7 +230,7 @@
             </select>
             </div>
 
-            <button type="submit" class="form-button">Remove Pet</button>
+            <button type="submit" class="form-button" id="remove-mdl-btn">Remove Pet</button>
           </form>
         </div>
       </div>
@@ -235,13 +238,6 @@
   </div>
 
   <!-- HANDLEBARS CUTTOFF -->
-
-
-
-
-
-
-
 
 
   <!-- update account -->
