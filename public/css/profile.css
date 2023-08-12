@@ -1,3 +1,4 @@
+/* STANDARD FLEX BOX SETUP */
 main, 
 .profile-heading,
 .upcoming-bookings,
@@ -12,6 +13,8 @@ main,
   align-items: center;
 }
 
+
+/* WIDTH DIMENSIONS */
 main {
   width: 100%;
   flex-direction: column;
@@ -24,6 +27,8 @@ main {
   width: 80%;
 }
 
+
+/* PROFILE HEADING AND PET IMAGES SECTION */
 .profile-heading {
   height: 167px;
   justify-content: space-between;
@@ -36,6 +41,8 @@ main {
   margin-left: 15px;
 }
 
+
+/* UPCOMING BOOKINGS SECTION */
 .upcoming-wrapper {
   width: 100%;
   background-color: var(--brand-light);
@@ -49,6 +56,12 @@ main {
   justify-content: space-around;
 }
 
+.upcoming-bookings button {
+  margin: 10px auto 10px 40px;
+}
+
+
+/* SWIPER - PART OF UPCOMING BOOKINGS SECTION */
 .swiper {
   width: 100%;
   padding: 10px;
@@ -77,12 +90,8 @@ main {
   color: var(--brand-primary)
 }
 
-.upcoming-bookings button {
-  margin: 10px auto 10px 40px;
-}
 
-
-
+/* ACCOUNT INFORMATION SECTION */
 .account-section {
   margin-top: 20px;
   flex-direction: column;
@@ -108,22 +117,4 @@ main {
   width: 100%;
   gap: 20px;
   justify-content: flex-start;
-}
-
-
-
-
-
-.modal form {
-  margin: 10px 10% 0 10%;
-  width: 80%;
-}
-
-.modal h5 {
-  width: 80%;
-  margin-left: 10%;
-}
-
-.form-outline, .select-outline {
-  margin-bottom: 20px;
 }
