@@ -12,7 +12,7 @@ footer,
 header, footer {
   background-color: var(--brand-primary);
   height: 60px;
-  width: 100%;
+  width: 100vw;
   box-shadow: var(--brand-shadow);
 }
 

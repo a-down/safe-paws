@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MDBootstrap -->
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+  rel="stylesheet"/>
+
+  <!-- CSS Reset File -->
+  <link rel="stylesheet" href="./css/reset.css" />
+
+  <!-- Swiper CSS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Markazi+Text:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Site Information -->
+  <title>Safe Paws</title>
+  <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/brand.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- favicon -->
+  <link rel="icon" href="./img/favicon.ico">
+
+  <!-- HANDLEBARS CUTTOFF -->
+  <link rel="stylesheet" href="./css/booking.css" />
+
+</head>
+
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="branding">
+        <img src="./img/pawprint.png"/>
+        <h3>Safe Paws</h3>
+      </div>
+      <nav>
+        <a>Our Team</a>
+        <img src="./img/user.png"/>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="booking-heading">
+      <h1>Book a Service</h1>
+    </section>
+
+    <!-- 
+      BOOKING FORM PROCESS
+      BACKEND
+        * FETCH for USER to get pet names
+        * FETCH for SERVICES to get services
+        * Deliver handlebars
+      
+      CLIENT SIDE
+        - User chooses pet, service, and special instructions
+        * NEXT BUTTON -> 
+          * FETCH for STAFF that provide the requested service
+          * Remove Next Button
+          * Append '.booking-form-2' to '.booking-form'
+        - User chooses date and time
+        - User has the option to request a staff member
+          - (The default staff for a new Booking should just be 'staff')
+        * SUBMIT BUTTON
+          * FETCH POST with data from form
+          * Send user to profile page
+     -->
+
+    <div class="booking-form-wrapper">
+      <form class="booking-form">
+
+        <!-- BOOKING FORM PART 1 -->
+        <div class="booking-form-1">
+          <!-- POPULATE WITH GET CALL -->
+          <!-- VALUE SHOULD BE PET ID -->
+          <label for="pet-select">Which pet is the service for?</label>
+          <select name="type" class="form-control" id="pet-select">
+            <option selected>Choose Pet</option>
+            <option value="1">Fido</option>
+            <option value="2">Skittles</option>
+          </select>
+
+          <!-- POPULATE OPTION VALUES AND TEXT WITH GET CALL -->
+          <!-- OPTION VALUES SHOULD BE SERVICE ID -->
+          <label for="service-select">What service is the booking for?</label>
+          <select name="type" class="form-control" id="service-select">
+            <option selected>Choose Service</option>
+            <option value="1">Dog Walking</option>
+            <option value="2">Pet Sitting</option>
+          </select>
+
+          <label for="special-instructions-input">Are there special instructions?</label>
+          <textarea class="form-control" id="special-instructions-input" rows="4" placeholder="Special Instructions"></textarea>
+
+          <button class="form-button" id="next-booking-btn">Next</button>
+        </div>
+
+        <!-- BOOKING FORM PART 2 -->
+        <div class="booking-form-2">
+          <!-- POPULATE NEXT 14 DAYS WITH DAYJS -->
+          <label for="date-select">Please choose a date.</label>
+          <select name="type" class="form-control" id="date-select">
+            <option selected>Choose Date</option>
+            <option value="1">8/13/23</option>
+            <option value="2">8/14/23</option>
+            <option value="3">8/15/23</option>
+            <option value="4">8/16/23</option>
+            <option value="5">8/17/23</option>
+            <option value="6">8/18/23</option>
+            <option value="7">8/19/23</option>
+          </select>
+
+          <label for="time-select">Please choose a time.</label>
+          <select name="type" class="form-control" id="time-select">
+            <option selected>Choose Date</option>
+            <option value="1">10:00 AM</option>
+            <option value="2">11:00 AM</option>
+            <option value="3">12:00 PM</option>
+            <option value="4">1:00 PM</option>
+            <option value="5">2:00 PM</option>
+            <option value="6">3:00 PM</option>
+            <option value="7">4:00 PM</option>
+            <option value="8">5:00 PM</option>
+            <option value="9">6:00 PM</option>
+            <option value="10">7:00 PM</option>
+          </select>
+
+          <!-- POPULATE WITH STAFF -->
+          <!-- OPTION VALUES SHOULD BE STAFF ID -->
+          <label for="staff-select">*Request a staff member.</label>
+          <small>*optional - request may be granted based on availability</small>
+          <select name="type" class="form-control" id="staff-select">
+            <option selected>Choose Service</option>
+            <option value="1">Tessa</option>
+            <option value="2">Tessa</option>
+            <option value="3">Tessa</option>
+            <option value="4">Tessa</option>
+          </select>
+          
+          <button class="form-button" id="submit-booking-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+
+  
+  </main>
+    
+
+  <!-- HANDLEBARS CUTTOFF -->
+
+  <footer>
+    <div class="footer-content">
+      <a>Contact Us</a>
+      <div class="socials">
+        <img src="https://placehold.co/50"/>
+        <img src="https://placehold.co/50"/>
+        <img src="https://placehold.co/50"/>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- MDB -->
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+  ></script>
+
+  <!-- jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+  integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+  crossorigin="anonymous"></script>
+
+  <!-- JS -->
+  <script src="./js/script.js"></script>  
+  <script src="./js/swiper.js"></script>
+  
+</body>
+</html>
