@@ -11,7 +11,8 @@ h4,
 h5, 
 h6, 
 .btn-primary,
-.btn-primary-opp {
+.btn-primary-opp,
+.form-button {
   font-family: 'Markazi Text', serif;
   font-weight: 700;
   color: black;
@@ -40,8 +41,13 @@ a,
 label, 
 input, 
 textarea, 
-select {
+select,
+small {
   font-family: 'Hubballi', cursive;
   font-size: 24px;
   margin: 0;
 } 
+
+small {
+  font-size: 12px;
+}
