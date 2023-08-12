@@ -44,3 +44,61 @@ header h3 {
 .footer-content {
   justify-content: space-between;
 }
+
+
+/* MODALS */
+.modal form {
+  margin: 10px 10% 0 10%;
+  width: 80%;
+}
+
+.modal h5 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-outline, .select-outline {
+  margin-bottom: 20px;
+}
+
+
+/* BUTTONS */
+button {
+  line-height: 1;
+}
+
+.btn-primary {
+  width: 200px;
+  height: 60px;
+  background-color: var(--brand-primary);
+  border-radius: 15px;
+  font-size: 30px;
+  color: white;
+  border: none;
+  box-shadow: var(--brand-shadow);
+  padding: 2px;
+}
+
+.btn-primary-opp {
+  width: 200px;
+  height: 60px;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 30px;
+  color: black;
+  border: 2px solid var(--brand-primary);
+  box-shadow: var(--brand-shadow);
+  padding: 2px;
+}
+
+.form-button {
+  width: 120px;
+  height: 40px;
+  background-color: var(--brand-primary);
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  box-shadow: var(--brand-shadow);
+  margin-bottom: 20px;
+}

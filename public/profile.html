@@ -4,31 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- MDBootstrap -->
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+  rel="stylesheet"/>
+
+  <!-- CSS Reset File -->
   <link rel="stylesheet" href="./css/reset.css" />
+
+  <!-- Swiper CSS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Markazi+Text:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- Site Information -->
+  <title>Safe Paws</title>
+  <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico">
+
   <!-- CSS -->
   <link rel="stylesheet" href="./css/brand.css" />
   <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- HANDLEBARS CUTTOFF -->
   <link rel="stylesheet" href="./css/profile.css" />
 
-  <title>Safe Paws</title>
 </head>
+
 
 <body>
   <header>
     <div class="header-content">
       <div class="branding">
-        <img src="https://placehold.co/32"/>
+        <img src="/public/img/pawprint.png"/>
         <h3>Safe Paws</h3>
       </div>
       <nav>
         <a>Our Team</a>
-        <img src="https://placehold.co/32"/>
+        <img src="/public/img/user.png"/>
       </nav>
     </div>
   </header>
@@ -42,16 +59,68 @@
       </div>
     </section>
 
+
     <div class="upcoming-wrapper">
       <section class="upcoming-bookings">
         <h2>Upcoming Bookings</h2>
-        <div>
-          <img src="https://placehold.co/280x160"/>
-          <img src="https://placehold.co/280x160"/>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div>
+                <p>Date: 7/10/23</p>
+                <p>Time: 2:00 PM</p>
+                <p>Pet: Francis</p>
+                <p>Service: Walk</p>
+                <p>Staff: Tessa</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+
         <button class="btn-primary add-booking-btn">Add a Booking!</button>
       </section>
     </div>
+
 
     <section class="account-section">
       <h2>Account Settings</h2>
@@ -62,17 +131,121 @@
         <p>Address: 123 Chicago Rd, Chicago, IL 55555</p>
         <p>Pets: Fido, Skittles</p>
         <div class="account-btn-wrapper">
-          <button class="btn-primary-opp update-account-btn">Update Account</button>
-          <button class="btn-primary-opp update-account-btn">Add Pet</button>
-          <button class="btn-primary-opp update-account-btn">Remove Pet</button>
+          <button class="btn-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
+          <button class="btn-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
+          <button class="btn-primary-opp remove-pet-btn" data-mdb-toggle="modal" data-mdb-target="#removePetModal">Remove Pet</button>
         </div>
       </div>
     </section>
   </main>
 
 
+  <!-- Update Account Modal -->
+  <div class="modal fade" id="updateAccountModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Account</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-outline">
+              <input type="email" id="email-input" class="form-control" />
+              <label class="form-label" for="email-input">Update Email</label>
+            </div>
+            <div class="form-outline">
+              <input type="text" id="username-input" class="form-control" />
+              <label class="form-label" for="username-input">Update Username</label>
+            </div>
+            <div class="form-outline">
+              <input type="password" id="password-input" class="form-control" />
+              <label class="form-label" for="password-input">Update Password</label>
+            </div>
+            <div class="form-outline">
+              <textarea class="form-control" id="address-input" rows="4"></textarea>
+              <label class="form-label" for="address-input">Update Address</label>
+            </div>
+            <button type="submit" class="form-button">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Add Pet Modal -->
+  <div class="modal fade" id="addPetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Add Pet</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-outline">
+              <input type="text" id="pet-name-input" class="form-control" />
+              <label class="form-label" for="pet-name-input">Pet Name</label>
+            </div>
+            <div class="select-outline">
+            <select class="form-control" id="pet-type-select">
+              <option selected>Pet Type</option>
+              <option value="1">Dog</option>
+              <option value="2">Cat</option>
+              <option value="3">Pig</option>
+            </select>
+            </div>
+
+            <div class="form-outline">
+              <textarea class="form-control" id="pet-details-input" rows="4"></textarea>
+              <label class="form-label" for="pet-details-input">Enter special instructions or special details.</label>
+            </div>
+            <button type="submit" class="form-button">Add Pet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Remove Pet Modal -->
+  <div class="modal fade" id="removePetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Remove Pet</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="select-outline">
+            <select class="form-control" id="pet-to-remove-select">
+              <option selected>Choose Pet</option>
+              <option value="1">Fido</option>
+              <option value="2">Skittles</option>
+            </select>
+            </div>
+
+            <button type="submit" class="form-button">Remove Pet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HANDLEBARS CUTTOFF -->
+
+
+
+
+
+
+
+
+
   <!-- update account -->
-  <form class="update-account-form">
+  <!-- <form class="update-account-form">
     <fieldset>
       <label>Email:</label>
       <input placeholder="email" id="email-input">
@@ -89,11 +262,11 @@
       <label>Address</label>
       <input placeholder="address" id="address-input">
     </fieldset>
-    <button class="update-submit">Update Account</button>
-  </form>
+    <button class="update-submit">Update</button>
+  </form> -->
 
   <!-- add pet -->
-  <form class="add-pet-form">
+  <!-- <form class="add-pet-form">
     <fieldset>
       <label>Name:</label>
       <input placeholder="email" id="pet-name-input">
@@ -107,20 +280,19 @@
     </fieldset>
     <fieldset>
       <label>Special Details:</label>
-      <textarea placeholder="Enter instructions/details here..." id="pet-name-input"></textarea>
+      <textarea placeholder="email" id="pet-details-input">Enter instructions/details here...</textarea>
     </fieldset>
     <button class="add-pet-submit">Add Pet</button>
-  </form>
+  </form> -->
 
   <!-- delete pet -->
-  <form class="remove-pet-form">
+  <!-- <form class="remove-pet-form">
     <select class="pet-to-remove-select">
       <option>Fido</option>
       <option>Skittles</option>
     </select>
     <button class="remove-pet-submit">Remove Pet</button>
-  </form>
-
+  </form> -->
 
 
 
@@ -135,12 +307,24 @@
     </div>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- MDB -->
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+  ></script>
 
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+  integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+  crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="./assets/js/script.js"></script>  
+  <script src="./js/script.js"></script>  
+  <script src="./js/swiper.js"></script>
   
 </body>
 </html>

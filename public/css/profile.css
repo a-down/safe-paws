@@ -1,15 +1,20 @@
+/* STANDARD FLEX BOX SETUP */
 main, 
 .profile-heading,
 .upcoming-bookings,
 .upcoming-wrapper,
 .account-section,
 .account-information,
-.account-btn-wrapper {
+.account-btn-wrapper,
+.swiper, 
+.swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+/* WIDTH DIMENSIONS */
 main {
   width: 100%;
   flex-direction: column;
@@ -22,34 +27,71 @@ main {
   width: 80%;
 }
 
+
+/* PROFILE HEADING AND PET IMAGES SECTION */
 .profile-heading {
   height: 167px;
   justify-content: space-between;
+  color: var(--brand-primary)
 }
 
 .profile-heading img {
   border-radius: 100px;
   box-shadow: var(--brand-shadow);
+  margin-left: 15px;
 }
 
+
+/* UPCOMING BOOKINGS SECTION */
 .upcoming-wrapper {
   width: 100%;
   background-color: var(--brand-light);
-  box-shadow: var(--brand-shadow);
 }
 
 .upcoming-bookings {
   flex-direction: column;
-  height: 386px;
+  min-height: 330px;
   margin: 10px 0 10px 0;
   align-items: flex-start;
   justify-content: space-around;
 }
 
 .upcoming-bookings button {
-  margin: 0 auto 0 auto;
+  margin: 10px auto 10px 40px;
 }
 
+
+/* SWIPER - PART OF UPCOMING BOOKINGS SECTION */
+.swiper {
+  width: 100%;
+  padding: 10px;
+}
+
+.swiper-wrapper {
+  margin-left: 60px;
+}
+
+.swiper-slide {
+  min-width: 220px;
+  height: 160px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: var(--brand-shadow);
+  border-radius: 5px;
+  padding-left: 20px;
+  justify-content: flex-start;
+}
+
+.swiper-slide p {
+  font-size: 24px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: var(--brand-primary)
+}
+
+
+/* ACCOUNT INFORMATION SECTION */
 .account-section {
   margin-top: 20px;
   flex-direction: column;
@@ -75,13 +117,4 @@ main {
   width: 100%;
   gap: 20px;
   justify-content: flex-start;
-}
-
-form {
-  margin: 100px;
-}
-
-fieldset {
-  border: none;
-  height: 60px;
 }
