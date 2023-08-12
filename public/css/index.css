@@ -1,0 +1,44 @@
+main,
+header,
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+}
+
+.hero-section {
+  height: 900px;
+  background-image: url(/public/img/hero-kitten.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.hero-image {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.hero-text {
+  position: absolute;
+  left: 10%;
+  top: 119px;
+}
+
+.title-color {
+  color: var(--brand-primary);
+}
+
+
+
+
+@media screen and (max-width: 1075px)  {
+  .hero-text {
+    top: 81px;
+  }
+}
