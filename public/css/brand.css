@@ -35,48 +35,8 @@ h5 {
   font-size: 30px;
 }
 
-p, a, label, input, textarea {
+p, a, label, input, textarea, select {
   font-family: 'Hubballi', cursive;
   font-size: 24px;
   margin: 0;
 } 
-
-button {
-  line-height: 1;
-}
-
-.btn-primary {
-  width: 200px;
-  height: 60px;
-  background-color: var(--brand-primary);
-  border-radius: 15px;
-  font-size: 30px;
-  color: white;
-  border: none;
-  box-shadow: var(--brand-shadow);
-  padding: 2px;
-}
-
-.btn-primary-opp {
-  width: 200px;
-  height: 60px;
-  background-color: white;
-  border-radius: 15px;
-  font-size: 30px;
-  color: black;
-  border: 2px solid var(--brand-primary);
-  box-shadow: var(--brand-shadow);
-  padding: 2px;
-}
-
-.form-button {
-  width: 120px;
-  height: 40px;
-  background-color: var(--brand-primary);
-  border-radius: 5px;
-  font-size: 18px;
-  color: white;
-  border: none;
-  box-shadow: var(--brand-shadow);
-  margin-bottom: 20px;
-}

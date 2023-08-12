@@ -122,8 +122,6 @@
     </div>
 
 
-
-
     <section class="account-section">
       <h2>Account Settings</h2>
       <div class="account-information">
@@ -134,15 +132,16 @@
         <p>Pets: Fido, Skittles</p>
         <div class="account-btn-wrapper">
           <button class="btn-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
-          <button class="btn-primary-opp add-pet-btn">Add Pet</button>
-          <button class="btn-primary-opp remove-pet-btn">Remove Pet</button>
+          <button class="btn-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
+          <button class="btn-primary-opp remove-pet-btn" data-mdb-toggle="modal" data-mdb-target="#removePetModal">Remove Pet</button>
         </div>
       </div>
     </section>
   </main>
 
+
   <!-- Update Account Modal -->
-  <div class="modal fade" id="updateAccountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="updateAccountModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -167,13 +166,75 @@
               <textarea class="form-control" id="address-input" rows="4"></textarea>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
-            <button type="submit" class="form-button">Update Account</button>
+            <button type="submit" class="form-button">Update</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 
+
+  <!-- Add Pet Modal -->
+  <div class="modal fade" id="addPetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Add Pet</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-outline">
+              <input type="text" id="pet-name-input" class="form-control" />
+              <label class="form-label" for="pet-name-input">Pet Name</label>
+            </div>
+            <div class="select-outline">
+            <select class="form-control" id="pet-type-select">
+              <option selected>Pet Type</option>
+              <option value="1">Dog</option>
+              <option value="2">Cat</option>
+              <option value="3">Pig</option>
+            </select>
+            </div>
+
+            <div class="form-outline">
+              <textarea class="form-control" id="pet-details-input" rows="4"></textarea>
+              <label class="form-label" for="pet-details-input">Enter special instructions or special details.</label>
+            </div>
+            <button type="submit" class="form-button">Add Pet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Remove Pet Modal -->
+  <div class="modal fade" id="removePetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Remove Pet</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="select-outline">
+            <select class="form-control" id="pet-to-remove-select">
+              <option selected>Choose Pet</option>
+              <option value="1">Fido</option>
+              <option value="2">Skittles</option>
+            </select>
+            </div>
+
+            <button type="submit" class="form-button">Remove Pet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HANDLEBARS CUTTOFF -->
 
 
 
@@ -184,7 +245,7 @@
 
 
   <!-- update account -->
-  <form class="update-account-form">
+  <!-- <form class="update-account-form">
     <fieldset>
       <label>Email:</label>
       <input placeholder="email" id="email-input">
@@ -202,10 +263,10 @@
       <input placeholder="address" id="address-input">
     </fieldset>
     <button class="update-submit">Update</button>
-  </form>
+  </form> -->
 
   <!-- add pet -->
-  <form class="add-pet-form">
+  <!-- <form class="add-pet-form">
     <fieldset>
       <label>Name:</label>
       <input placeholder="email" id="pet-name-input">
@@ -219,19 +280,19 @@
     </fieldset>
     <fieldset>
       <label>Special Details:</label>
-      <textarea placeholder="email" id="pet-name-input">Enter instructions/details here...</textarea>
+      <textarea placeholder="email" id="pet-details-input">Enter instructions/details here...</textarea>
     </fieldset>
     <button class="add-pet-submit">Add Pet</button>
-  </form>
+  </form> -->
 
   <!-- delete pet -->
-  <form class="remove-pet-form">
+  <!-- <form class="remove-pet-form">
     <select class="pet-to-remove-select">
       <option>Fido</option>
       <option>Skittles</option>
     </select>
     <button class="remove-pet-submit">Remove Pet</button>
-  </form>
+  </form> -->
 
 
 
@@ -245,17 +306,6 @@
       </div>
     </div>
   </footer>
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

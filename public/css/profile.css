@@ -110,25 +110,20 @@ main {
   justify-content: flex-start;
 }
 
-form {
-  margin: 100px;
-}
 
-fieldset {
-  border: none;
-  height: 60px;
-}
 
-#updateAccountModal form {
+
+
+.modal form {
   margin: 10px 10% 0 10%;
   width: 80%;
 }
 
-#updateAccountModal h5 {
+.modal h5 {
   width: 80%;
   margin-left: 10%;
 }
 
-.form-outline {
+.form-outline, .select-outline {
   margin-bottom: 20px;
 }
