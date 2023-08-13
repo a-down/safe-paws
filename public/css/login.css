@@ -1,0 +1,41 @@
+main,
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+}
+
+.form-wrapper {
+  margin-top: 40px;
+  width: 80%;
+}
+
+form {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  width: 80%;
+  padding-bottom: 30px;
+}
+
+a {
+  display: block;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.signup-wrapper {
+  display: none;
+}
