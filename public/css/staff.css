@@ -9,7 +9,9 @@ main,
 .team-wrapper,
 .staff-member-wrapper,
 .staff-text,
-.staff-section {
+.staff-section,
+.contact-us-section,
+form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +24,8 @@ main,
 }
 
 .leaders-section,
-.our-team-section {
+.our-team-section,
+.contact-us-section {
   width: 80%;
 }
 
@@ -118,6 +121,23 @@ main,
 .staff-text {
   flex-direction: column;
   align-items: flex-start;
+}
+
+.contact-us-section {
+  padding-top: 40px;
+  justify-content: flex-start;
+}
+
+.contact-form-wrapper {
+  width: 100%;
+}
+
+form {
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  max-width: 500px;
 }
 
 
