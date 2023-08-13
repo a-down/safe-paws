@@ -95,7 +95,7 @@ async function updateAccount (event) {
 
 
 //takes us to the booking page
-function addBooking (event) {
+function addBooking () {
   console.log('booking button')
   let queryString = './booking.html'
   location.assign(queryString)
