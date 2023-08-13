@@ -36,3 +36,8 @@ main {
   max-width: 500px;
 }
 
+@media screen and (max-width: 616px) {
+  .booking-heading {
+    height: 80px;
+  }
+}

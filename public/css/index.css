@@ -203,11 +203,15 @@ li {
   .furry-friends-section,
   .reviews-section {
     width: 90%;
+    header
   }
 }
 
 @media screen and (max-width: 500px) {
   .header-text {
-    display: none;
+    display: none,
+  }
+  .header-content, .footer-content {
+    width: 90%;
   }
 }
