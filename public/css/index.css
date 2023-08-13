@@ -126,6 +126,7 @@ li {
 }
 
 .reviews-section {
+  margin-top: 40px;
   min-height: 312px;
   flex-direction: column;
   gap: 20px;
@@ -228,6 +229,10 @@ li {
     font-size: 48px;
     line-height: 42px;
     margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 38px;
   }
 
   .pet-wrapper, .review-wrapper {
