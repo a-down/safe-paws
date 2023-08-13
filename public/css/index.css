@@ -6,25 +6,27 @@ header,
   align-items: center;
 }
 
+body {
+  position: relative;
+}
+
 header {
   background-color: transparent;
   box-shadow: none;
   position: absolute;
 }
 
+
+
 .hero-section {
-  height: 900px;
-  background-image: url(/public/img/hero-kitten.png);
-  background-position: right;
-  background-repeat: no-repeat;
+  width: 100%;
 }
 
 .hero-image {
   width: 100%;
-  justify-content: flex-end;
 }
 
-.hero-text {
+.header-text {
   position: absolute;
   left: 10%;
   top: 119px;
@@ -37,8 +39,51 @@ header {
 
 
 
-@media screen and (max-width: 1075px)  {
-  .hero-text {
-    top: 81px;
+/* @media screen and (min-width: 1475px)  {
+  .hero-section {
+    width: 100%;
+    height: none;
+  }
+} */
+
+@media screen and (max-width: 1278px) {
+  .header-text {
+    top: 99px;
+  }
+}
+
+@media screen and (max-width: 1145px) {
+  .header-text {
+    top: 89px;
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 1145px) {
+  .header-text {
+    top: 89px;
+  }
+}
+
+@media screen and (max-width: 908px) {
+  .header-text {
+    top: 59px;
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .header-text {
+    position: static;
+    left: 0;
+  }
+  .header-first-part {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-text {
+    display: none;
   }
 }
