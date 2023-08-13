@@ -3,7 +3,8 @@ header,
 nav,
 .header-content,
 footer,
-.footer-content {
+.footer-content,
+.socials {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +42,20 @@ header h3 {
   color: white;
 }
 
+@media screen and (max-width: 500px) {
+  header h3 {
+    display: none;
+  }
+}
+
 .footer-content {
   justify-content: space-between;
+}
+
+.socials {
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 

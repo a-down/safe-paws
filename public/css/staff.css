@@ -1,0 +1,166 @@
+main,
+.leaders-section,
+.leaders-content,
+.leader-wrapper,
+.leader-lower,
+.our-team-section,
+.leader-btn-wrapper,
+.our-team-section,
+.team-wrapper,
+.staff-member-wrapper,
+.staff-text,
+.staff-section,
+.contact-us-section,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main,
+.team-wrapper {
+  width: 100%;
+  flex-direction: column;
+}
+
+.leaders-section,
+.our-team-section,
+.contact-us-section {
+  width: 80%;
+}
+
+.leaders-section {
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 543px;
+}
+
+.leaders-section h1 {
+  margin-top: 43px;
+  width: 100%;
+  text-align: left;
+  color: var(--brand-primary);
+  gap: 12px;
+}
+
+.leader-wrapper {
+  flex-wrap: wrap;
+  gap: 5px;
+  position: relative;
+  padding: 16px;
+}
+
+.color-block {
+  width: 100%;
+  background-color: var(--brand-light);
+  height: 157px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.leader-wrapper img {
+  border-radius: 100px;
+}
+
+.leader-wrapper h4 {
+  width: 100%;
+}
+
+.leader-wrapper p {
+  flex-shrink: 1;
+}
+
+.leader-lower {
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.leader-btn-wrapper {
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 40px 0 40px 0;
+}
+
+.team-wrapper {
+  background-color: var(--brand-light);
+}
+
+.our-team-section {
+  padding: 43px 0 43px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.staff-section {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  
+}
+
+.staff-member-wrapper {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 50%;
+  margin-bottom: 33px;
+}
+
+.staff-member-wrapper h5 {
+  font-weight: 400;
+}
+
+.staff-member-wrapper img {
+  border-radius: 100px;
+}
+
+.staff-text {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-us-section {
+  padding-top: 40px;
+  justify-content: flex-start;
+}
+
+.contact-form-wrapper {
+  width: 100%;
+}
+
+form {
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  max-width: 500px;
+}
+
+
+@media screen and (max-width: 1165px) {
+  .leaders-content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .leader-lower {
+    flex-direction: column;
+  }
+  
+  .color-block {
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 534px) {
+.leader-btn-wrapper {
+  flex-direction: column;
+  gap: 20px;
+}
+}
+
