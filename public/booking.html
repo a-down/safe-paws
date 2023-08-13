@@ -25,6 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Markazi+Text:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- Link the DayJS library -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+     crossorigin="anonymous"></script>
+
   <!-- Site Information -->
   <title>Safe Paws</title>
   <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico">
@@ -117,18 +122,11 @@
           <label for="date-select">Please choose a date.</label>
           <select name="type" class="form-control" id="date-select">
             <option selected>Choose Date</option>
-            <option value="1">8/13/23</option>
-            <option value="2">8/14/23</option>
-            <option value="3">8/15/23</option>
-            <option value="4">8/16/23</option>
-            <option value="5">8/17/23</option>
-            <option value="6">8/18/23</option>
-            <option value="7">8/19/23</option>
           </select>
 
           <label for="time-select">Please choose a time.</label>
           <select name="type" class="form-control" id="time-select">
-            <option selected>Choose Date</option>
+            <option selected>Choose Time</option>
             <option value="1">10:00 AM</option>
             <option value="2">11:00 AM</option>
             <option value="3">12:00 PM</option>
@@ -191,7 +189,7 @@
   crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="./js/script.js"></script>  
+  <!-- <script src="./js/script.js"></script>   -->
   <script src="./js/swiper.js"></script>
   <script src="./js/booking.js"></script>
   
