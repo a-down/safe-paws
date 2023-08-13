@@ -19,16 +19,14 @@ const dateSelect = document.getElementById("date-select")
 */
 
 
-//this code auto-populates the date select form with the next 14 days (not including current day)
+//this auto-populates the date select form with the next 14 days 
 date = dayjs()
-
 let dateArr = []
 
 for (i= 1; i < 15; i++) {
-  dates = date.add(i,'day').format('MM/DD/YY') 
+  dates = date.add(i,'day').format('MM/DD/YY')  
   dateArr.push(dates)
 }
-
 for (let key in dateArr) {
   let option = document.createElement('option')
   option.setAttribute('value', dateArr[key])
@@ -36,21 +34,23 @@ for (let key in dateArr) {
   option.appendChild(optionText)
   dateSelect.appendChild(option)
 }
-
 console.log(dateArr)
 
 
-//hides the next button and appends the rest of the form
+//struggling with how to start this part
 async function beginBooking (event) {
   event.preventDefault();
-
+  const response = await fetch ('/api/staffservices', {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'},
+  })
 }
 
 //submits the information from both forms
 async function submitBooking (event) {
   event.preventDefault()
   const selectedPet = document.querySelector('#pet-select')
-  const petName= selectedPet.value
+  const petName = selectedPet.value
   const selectedService = document.querySelector("#service-select")
   const serviceName = selectedService.value
   const specialInst = document.querySelector('#special-instructions-input').value.trim()
