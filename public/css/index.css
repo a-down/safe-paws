@@ -2,7 +2,11 @@ main,
 header,
 .hero-section,
 .about-section,
-.about-text {
+.about-text,
+.furry-friends-section, 
+.furry-friends-wrapper,
+.pet-photos,
+.pet-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,13 +83,41 @@ li {
 }
 
 .furry-friends-wrapper {
-  height: 452px;
+  padding: 20px 0 20px 0;
+  min-height: 452px;
   background-color: var(--brand-light);
   width: 100%;
+  align-items: flex-start;
 }
 
 .furry-friends-section {
-  
+  height: 90%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.furry-friends-section h3 {
+  width: 100%;
+  text-align: left;
+  color: var(--brand-primary)
+}
+
+.pet-photos {
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pet-wrapper {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pet-photos img {
+  border-radius: 200px;
+  box-shadow: var(--brand-shadow);
 }
 
 .reviews-section {
@@ -100,12 +132,18 @@ li {
   .header-text {
     top: 99px;
   }
+  .pet-photos {
+    justify-content: space-between;
+  }
 }
 
 @media screen and (max-width: 1145px) {
   .header-text {
     top: 89px;
     font-size: 48px;
+  }
+  .pet-photos {
+    justify-content: space-evenly;
   }
 }
 
@@ -124,6 +162,10 @@ li {
     flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
+  }
+  .about-section {
+    gap: 40px;
+    padding: 20px 0 40px 0;
   }
 }
 
