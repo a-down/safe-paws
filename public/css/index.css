@@ -184,11 +184,20 @@ li {
   .header-first-part {
     display: none;
   }
-}
-
-@media screen and (max-width: 720px) {
   .pet-wrapper, .review-wrapper {
     align-items: stretch;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .reviews-section img, .pet-photos img, .pet-photos h5 {
+    width: 80vw;
+  }
+  .pet-photos img {
+    border-radius: 300px;
+  }
+  .pet-photos h5 {
+    text-align: center;
   }
 }
 
