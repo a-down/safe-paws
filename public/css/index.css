@@ -1,6 +1,7 @@
 main,
 header,
-.hero-section {
+.hero-section,
+.about-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +16,6 @@ header {
   box-shadow: none;
   position: absolute;
 }
-
-
 
 .hero-section {
   width: 100%;
@@ -36,15 +35,60 @@ header {
   color: var(--brand-primary);
 }
 
+main {
+  width: 100%;
+  flex-direction: column;
+}
+
+.about-section,
+.furry-friends-section,
+.reviews-section {
+  width: 80%;
+}
+
+.about-section {
+  padding: 45px;
+  height: 546px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.about-section h3 {
+  color: var(--brand-primary);
+}
+
+.about-us {
+  flex-shrink: 1;
+}
+
+.why-us {
+  width: 306px;
+  flex-shrink: 0;
+}
+
+li {
+  list-style-type: circle;
+  list-style-position: outside;
+}
+
+.furry-friends-wrapper {
+  height: 452px;
+  background-color: var(--brand-light);
+  width: 100%;
+}
+
+.furry-friends-section {
+  
+}
+
+.reviews-section {
+  height: 312px;
+}
 
 
 
-/* @media screen and (min-width: 1475px)  {
-  .hero-section {
-    width: 100%;
-    height: none;
-  }
-} */
+
 
 @media screen and (max-width: 1278px) {
   .header-text {
@@ -62,6 +106,12 @@ header {
 @media screen and (max-width: 1145px) {
   .header-text {
     top: 89px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
   }
 }
 

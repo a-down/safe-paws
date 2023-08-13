@@ -42,7 +42,8 @@ label,
 input, 
 textarea, 
 select,
-small {
+small,
+li {
   font-family: 'Hubballi', cursive;
   font-size: 24px;
   margin: 0;
