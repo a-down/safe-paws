@@ -1,7 +1,8 @@
 main,
 header,
 .hero-section,
-.about-section {
+.about-section,
+.about-text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,18 +48,23 @@ main {
 }
 
 .about-section {
-  padding: 45px;
-  height: 546px;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 100px;
+  min-height: 546px;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .about-section h3 {
   color: var(--brand-primary);
 }
 
+.about-text {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+}
+
 .about-us {
+  max-width: 800px;
   flex-shrink: 1;
 }
 
@@ -107,18 +113,17 @@ li {
   .header-text {
     top: 89px;
   }
-
-  .about-section {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-  }
 }
 
 @media screen and (max-width: 908px) {
   .header-text {
     top: 59px;
     font-size: 42px;
+  }
+  .about-text {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
   }
 }
 
