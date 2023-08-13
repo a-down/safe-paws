@@ -50,6 +50,10 @@ li {
   margin: 0;
 } 
 
+a {
+  color: black;
+}
+
 small {
   font-size: 12px;
 }

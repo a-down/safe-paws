@@ -37,7 +37,8 @@
   <link rel="icon" href="./img/favicon.ico">
 
   <!-- HANDLEBARS CUTTOFF -->
-  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/login.css" />
+
 
 </head>
 
@@ -47,7 +48,7 @@
     <div class="header-content">
       <div class="branding">
         <img src="./img/pawprint.png"/>
-        <h1 class="header-text"><span class="header-first-part">Know they're in </span><span class="title-color">Safe Paws</span></h1>
+        <h3>Safe Paws</h3>
       </div>
       <nav>
         <a>Our Team</a>
@@ -55,76 +56,43 @@
       </nav>
     </div>
   </header>
-
-  <!-- CITE PHOTO: Photo by Anel Rossouw: https://www.pexels.com/photo/photo-of-grey-tabby-kitten-lying-down-2558605/ -->
-  <hero class="hero-section">
-
-    <img src="/public/img/hero-kitten.png" class="hero-image"/>
-  </hero>
   
   <main>
-    <section class="about-section">
-      <div class="about-text">
-        <div class="about-us">
-          <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae praesentium nulla odit facilis cupiditate consequatur alias laboriosam expedita ex repellat error nobis aspernatur, dolorem adipisci dignissimos distinctio ratione exercitationem! Odit.</p>
-        </div>
-        <div class="why-us">
-          <h3>Why Choose Us</h3>
-          <ul>
-            <li>Flexible</li>
-            <li>Accomodating</li>
-            <li>Variety of Services</li>
-            <li>Friendly Staff</li>
-            <li>Most customers are consistent customers</li>
-          </ul>
-        </div>
+      <div class="form-wrapper login-wrapper">
+        <form id="login-form">
+          <h1>Log In</h1>
+          <div class="form-outline">
+            <input type="text" id="username-login-input" class="form-control" />
+            <label class="form-label" for="username-login-input">Username</label>
+          </div>
+          <div class="form-outline">
+            <input type="password" id="password-login-input" class="form-control" />
+            <label class="form-label" for="password-login-input">Password</label>
+          </div>
+          <button class="form-button">Log In</button>
+          <a class="signup-link">Need to create an account?</a>
+        </form>
       </div>
-      <button class="meet-our-team btn-primary">Meet our team!</button>
-    </section>
 
-    <div class="furry-friends-wrapper">
-      <section class="furry-friends-section">
-        <h3>Some of our Furry Friends</h3>
-        <div class="pet-photos">
-          <div class="pet-wrapper">
-            <img src="https://placehold.co/240" />
-            <h5>Francis</h5>
+      <div class="form-wrapper signup-wrapper">
+        <form id="signup-form">
+          <h1>Sign Up</h1>
+          <div class="form-outline">
+            <input type="text" id="username-signup-input" class="form-control" />
+            <label class="form-label" for="username-signup-input">Username</label>
           </div>
-          <div class="pet-wrapper">
-            <img src="https://placehold.co/240" />
-            <h5>Francis</h5>
+          <div class="form-outline">
+            <input type="password" id="password-signup-input" class="form-control" />
+            <label class="form-label" for="password-signup-input">Password</label>
           </div>
-          <div class="pet-wrapper">
-            <img src="https://placehold.co/240" />
-            <h5>Francis</h5>
+          <div class="form-outline">
+            <input type="password" id="password-signup-confirm" class="form-control" />
+            <label class="form-label" for="password-signup-confirm">Confirm Password</label>
           </div>
-        </div>
-      </section>
-    </div>
-
-
-    <section class="reviews-section">
-      <h3>Customer Reviews</h3>
-      <div class="reviews">
-        <div class="review-wrapper">
-          <h5>Theresa</h5>
-          <p>Safe Paws always takes great care of my Francis! He always get individual walks and play time when I’m at work.</p>
-        </div>
-        <div class="review-wrapper">
-          <h5>Kyle</h5>
-          <p>My cat Jimbo has special medication that he does NOT like taking. Safe Paws staff manages to get him to ENJOY his medication!</p>
-        </div>
-        <div class="review-wrapper">
-          <h5>Paul</h5>
-          <p>We use Safe Paws to houes sit our dog Pickles and our grouchy old cat Oscar. They will work you to schedule flexible hours, and they will even water your plants!</p>
-        </div>
+          <button class="form-button">Sign Up</button>
+          <a class="login-link">Already have an account?</a>
+        </form>
       </div>
-    </section>
-
-
-
-  
   </main>
     
 
@@ -157,7 +125,7 @@
   crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="./js/script.js"></script>  
+  <script src="./js/login.js"></script>  
   <script src="./js/swiper.js"></script>
   <script src="./js/booking.js"></script>
   

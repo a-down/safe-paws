@@ -7,7 +7,8 @@ main,
 .account-information,
 .account-btn-wrapper,
 .swiper, 
-.swiper-slide {
+.swiper-slide,
+.profile-pets {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,15 +31,22 @@ main {
 
 /* PROFILE HEADING AND PET IMAGES SECTION */
 .profile-heading {
-  height: 167px;
+  min-height: 167px;
   justify-content: space-between;
-  color: var(--brand-primary)
+  color: var(--brand-primary);
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .profile-heading img {
   border-radius: 100px;
   box-shadow: var(--brand-shadow);
-  margin-left: 15px;
+}
+
+.profile-pets {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 
@@ -117,4 +125,25 @@ main {
   width: 100%;
   gap: 20px;
   justify-content: flex-start;
+}
+
+@media screen and (max-width: 460px) {
+  .account-section button {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .acocunt-btn-wrapper {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .profile-heading,
+  .upcoming-bookings,
+  .account-section {
+  width: 90%;
+}
+.header-content, .footer-content {
+  width: 90%;
+}
 }
