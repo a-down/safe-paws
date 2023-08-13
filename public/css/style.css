@@ -3,7 +3,8 @@ header,
 nav,
 .header-content,
 footer,
-.footer-content {
+.footer-content,
+.socials {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +44,12 @@ header h3 {
 
 .footer-content {
   justify-content: space-between;
+}
+
+.socials {
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 
