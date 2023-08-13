@@ -211,20 +211,34 @@ li {
 }
 
 @media screen and (max-width: 720px) {
-  .header-text {
+  header {
     position: static;
-    left: 0;
+    background-color: var(--brand-light);
+    height: 100px;
+    align-items: flex-start;
   }
-  .header-first-part {
-    display: none;
+  .header-content {
+    margin-top: 10px;
   }
+  .header-text {
+    top: 39px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: left;
+    font-size: 48px;
+    line-height: 42px;
+    margin-bottom: 20px;
+  }
+
   .pet-wrapper, .review-wrapper {
     align-items: stretch;
   }
 }
 
 @media screen and (max-width: 639px) {
-  .review-wrapper, .pet-photos img, .pet-photos h5 {
+  .review-wrapper, 
+  .pet-photos img, 
+  .pet-photos h5 {
     width: 90vw;
   }
   .pet-photos img {
@@ -235,16 +249,23 @@ li {
   }
   .about-section,
   .furry-friends-section,
-  .reviews-section {
+  .reviews-section,
+  .header-content,
+  .footer-content {
     width: 90%;
+  }
+  .header-text {
+    width: 100%;
+    left: 5%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .header-text {
-    display: none;
+  .title-color {
+    display: block;
+    width: 100%;
   }
-  .header-content, .footer-content {
-    width: 90%;
+  .header-first-part {
+    display: none;
   }
 }
