@@ -9,9 +9,12 @@ main {
   width: 100%;
 }
 
+
+
 .form-wrapper {
   margin-top: 40px;
-  width: 80%;
+  width: 600px;
+  flex-direction: column;
 }
 
 form {
