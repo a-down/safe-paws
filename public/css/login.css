@@ -42,3 +42,11 @@ footer {
 .signup-wrapper {
   display: none;
 }
+
+@media screen and (max-width: 500px) {
+  form,
+  .header-content,
+  .footer-content {
+    width: 90%;
+  }
+}
