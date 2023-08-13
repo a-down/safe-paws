@@ -42,6 +42,12 @@ header h3 {
   color: white;
 }
 
+@media screen and (max-width: 500px) {
+  header h3 {
+    display: none;
+  }
+}
+
 .footer-content {
   justify-content: space-between;
 }

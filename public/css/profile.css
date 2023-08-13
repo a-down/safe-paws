@@ -30,9 +30,10 @@ main {
 
 /* PROFILE HEADING AND PET IMAGES SECTION */
 .profile-heading {
-  height: 167px;
+  min-height: 167px;
   justify-content: space-between;
-  color: var(--brand-primary)
+  color: var(--brand-primary);
+  flex-wrap: wrap;
 }
 
 .profile-heading img {
