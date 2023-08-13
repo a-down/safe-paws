@@ -105,10 +105,13 @@ li {
   color: var(--brand-primary)
 }
 
+.pet-photos {
+  flex-wrap: wrap;
+}
+
 .pet-photos, .reviews {
   width: 100%;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -123,6 +126,7 @@ li {
 }
 
 .reviews-section {
+  margin-top: 40px;
   min-height: 312px;
   flex-direction: column;
   gap: 20px;
@@ -131,6 +135,27 @@ li {
 .reviews-section h3 {
   width: 100%;
   text-align: left;
+}
+
+.review-wrapper {
+  min-height: 160px;
+  width: 240px;
+  flex: 1;
+  box-shadow: var(--brand-shadow);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
+}
+
+.review-wrapper h5 {
+  font-family: 'Hubballi', cursive;
+  font-size: 30px;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.review-wrapper p {
+  font-size: 18px;
 }
 
 
@@ -150,13 +175,23 @@ li {
     font-size: 48px;
   }
   .pet-photos, .reviews {
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 }
 
 @media screen and (max-width: 1145px) {
   .header-text {
     top: 89px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .review-wrapper {
+    width: 100%;
+    min-height: 160px;
+  }
+  .reviews {
+    flex-direction: column;
   }
 }
 
@@ -177,23 +212,65 @@ li {
 }
 
 @media screen and (max-width: 720px) {
-  .header-text {
+  header {
     position: static;
-    left: 0;
+    background-color: var(--brand-light);
+    height: 100px;
+    align-items: flex-start;
   }
-  .header-first-part {
-    display: none;
+  .header-content {
+    margin-top: 10px;
   }
-}
+  .header-text {
+    top: 39px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: left;
+    font-size: 48px;
+    line-height: 42px;
+    margin-bottom: 20px;
+  }
 
-@media screen and (max-width: 720px) {
+  h3 {
+    font-size: 38px;
+  }
+
   .pet-wrapper, .review-wrapper {
     align-items: stretch;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 639px) {
+  .review-wrapper, 
+  .pet-photos img, 
+  .pet-photos h5 {
+    width: 90vw;
+  }
+  .pet-photos img {
+    border-radius: 300px;
+  }
+  .pet-photos h5 {
+    text-align: center;
+  }
+  .about-section,
+  .furry-friends-section,
+  .reviews-section,
+  .header-content,
+  .footer-content {
+    width: 90%;
+  }
   .header-text {
+    width: 100%;
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title-color {
+    display: block;
+    width: 100%;
+  }
+  .header-first-part {
     display: none;
   }
 }
