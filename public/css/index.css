@@ -191,13 +191,18 @@ li {
 
 @media screen and (max-width: 639px) {
   .reviews-section img, .pet-photos img, .pet-photos h5 {
-    width: 80vw;
+    width: 90vw;
   }
   .pet-photos img {
     border-radius: 300px;
   }
   .pet-photos h5 {
     text-align: center;
+  }
+  .about-section,
+  .furry-friends-section,
+  .reviews-section {
+    width: 90%;
   }
 }
 
