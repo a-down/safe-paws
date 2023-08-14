@@ -83,7 +83,7 @@ main {
   min-width: 220px;
   height: 160px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   box-shadow: var(--brand-shadow);
   border-radius: 5px;
   padding-left: 20px;
@@ -109,7 +109,7 @@ main {
 }
 
 .account-information {
-  border: 1px solid black;
+  border: 1px solid lightgray;
   padding: 12px 24px 12px 24px;
   width: 100%;
   min-height: 300px;
