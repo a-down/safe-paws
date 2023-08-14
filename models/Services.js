@@ -17,7 +17,7 @@ Services.init(
       isAlphanumeric: true
     },
     staff_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'staff',

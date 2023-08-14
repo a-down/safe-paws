@@ -13,19 +13,17 @@ StaffServices.init(
       autoIncrement: true
     },
     staff_service: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'staff',
         key: 'id',
-        unique: false
       }
     },
     service_staff: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'services',
         key: 'id',
-        unique: false
       }
     }
   },

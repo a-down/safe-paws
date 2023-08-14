@@ -16,7 +16,7 @@ User.hasMany(Pets, {
   onDelete: 'CASCADE',
 });
 
-Pets.hasOne(User, {
+Pets.belongsTo(User, {
   foreignKey: 'user_id', 
 });
 
@@ -26,7 +26,7 @@ Services.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(Services, {
+Bookings.belongsTo(Services, {
   foreignKey: 'service_id',
 });
 
@@ -36,7 +36,7 @@ Pets.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(Pets, {
+Bookings.belongsTo(Pets, {
   foreignKey: 'pet_id',
 });
 
@@ -46,7 +46,7 @@ User.hasMany(Reviews, {
   onDelete: 'CASCADE',
 });
 
-Reviews.hasOne(User, {
+Reviews.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -56,7 +56,7 @@ User.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(User, {
+Bookings.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -78,8 +78,8 @@ Services.belongsToMany(Staff, {
 });
 
 
-{
 module.exports = 
+{
   User,
   Pets,
   Services,
