@@ -1,5 +1,5 @@
-[{"service_name":"pet sitting","staff_id":"80163"},
-{"service_name":"pet training","staff_id":"43494"},
-{"service_name":"pet training","staff_id":"82780"},
-{"service_name":"pet grooming","staff_id":"34242"},
-{"service_name":"pet boarding","staff_id":"99833"}]
+[{"service_name":"pet sitting"},
+{"service_name":"pet training"},
+{"service_name":"pet training"},
+{"service_name":"pet grooming"},
+{"service_name":"pet boarding"}]
