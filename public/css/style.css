@@ -38,6 +38,14 @@ footer img {
   gap: 25px;
 }
 
+header a, footer a {
+  color: black;
+}
+
+header a:hover, footer a:hover {
+  color: white;
+}
+
 header h3 {
   color: white;
 }
