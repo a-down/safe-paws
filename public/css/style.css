@@ -100,8 +100,12 @@ button {
   padding: 2px;
 }
 
-.btn-primary:hover, .form-button:hover {
-  
+.button-primary:hover, .form-button:hover {
+  background-color: var(--brand-primary-faded);
+}
+
+.button-primary:active, .form-button:active {
+  border: 2px solid var(--brand-primary);
 }
 
 .button-primary-opp {
@@ -111,9 +115,17 @@ button {
   border-radius: 15px;
   font-size: 24px;
   color: black;
-  border: 2px solid var(--brand-primary);
+  border: 1px solid var(--brand-primary);
   box-shadow: var(--brand-shadow);
   padding: 2px;
+}
+
+.button-primary-opp:hover {
+  background-color: var(--brand-light);
+}
+
+.button-primary-opp:active {
+  border: 2px solid var(--brand-primary);
 }
 
 .form-button {
