@@ -88,7 +88,7 @@ button {
   line-height: 1;
 }
 
-.btn-primary {
+.button-primary {
   width: 200px;
   height: 60px;
   background-color: var(--brand-primary);
@@ -100,7 +100,11 @@ button {
   padding: 2px;
 }
 
-.btn-primary-opp {
+.btn-primary:hover, .form-button:hover {
+  
+}
+
+.button-primary-opp {
   width: 200px;
   height: 60px;
   background-color: white;
