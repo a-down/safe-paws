@@ -9,3 +9,4 @@ homeLink.on('mouseenter', () => {
   mainLogo.attr('style', 'display: inline');
   hoverLogo.attr('style', 'display: none');
 })
+
