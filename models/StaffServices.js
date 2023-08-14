@@ -1,11 +1,8 @@
-
-
-
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class StaffServices extends Model {}
+class StaffServices extends Model { }
 
 StaffServices.init(
   {

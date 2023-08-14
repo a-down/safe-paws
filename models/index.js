@@ -40,7 +40,7 @@ Bookings.hasOne(Pets, {
   foreignKey: 'pet_id',
 });
 
-//users have many reviews, reviews have on users
+//User have many reviews, reviews have on User
 User.hasMany(Reviews, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
@@ -50,7 +50,7 @@ Reviews.hasOne(User, {
   foreignKey: 'user_id',
 });
 
-//users have many bookings, bookings have one user
+//User have many bookings, bookings have one user
 User.hasMany(Bookings, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
@@ -78,8 +78,8 @@ Services.belongstoMany(Staff, {
 });
 
 
-
-module.exports = {
+{
+module.exports = 
   User,
   Pets,
   Services,
