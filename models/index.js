@@ -1,8 +1,4 @@
-
-
-
-
-const Users = require('./Users');
+const User = require('./User');
 const Pets = require('./Pets');
 const Services = require('./Services');
 const Staff = require('./Staff');
@@ -11,13 +7,13 @@ const Reviews = require('./Reviews');
 const StaffServices = require('./StaffServices')
 
 //user has many pets, pet have one user
-Users.hasMany(Pets, {
+User.hasMany(Pets, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-Pets.hasOne(Users, {
-  foreignKey: 'user_id', 
+Pets.hasOne(User, {
+  foreignKey: 'user_id',
 });
 
 //services have many bookings, bookings have one service
@@ -40,23 +36,23 @@ Bookings.hasOne(Pets, {
   foreignKey: 'pet_id',
 });
 
-//users have many reviews, reviews have on users
-Users.hasMany(Reviews, {
+//User have many reviews, reviews have on User
+User.hasMany(Reviews, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-Reviews.hasOne(Users, {
+Reviews.hasOne(User, {
   foreignKey: 'user_id',
 });
 
-//users have many bookings, bookings have one user
-Users.hasMany(Bookings, {
+//User have many bookings, bookings have one user
+User.hasMany(Bookings, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(Users, {
+Bookings.hasOne(User, {
   foreignKey: 'user_id',
 });
 
@@ -89,7 +85,7 @@ Services.belongstoMany(Staff, {
 
 
 module.exports = {
-  Users,
+  User,
   Pets,
   Services,
   Staff,

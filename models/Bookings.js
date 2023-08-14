@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../connection/config.js');
 
-class Bookings extends Model {}
+class Bookings extends Model { }
 
 Bookings.init(
   {
@@ -14,6 +14,10 @@ Bookings.init(
     service_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'services',
+        key: 'id',
+      },
     },
     date: {
       type: DataTypes.DATE,
@@ -22,14 +26,22 @@ Bookings.init(
     user_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     pet_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'pets',
+        key: 'id',
+      },
     },
     service_received: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     }
   },
   {
