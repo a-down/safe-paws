@@ -1,20 +1,37 @@
 const router = require("express").Router();
-const { Staff, Products } = require("../../models");
+const { Staff, Products, Services, StaffServices } = require("../../models");
 
-// The `/api/pets/` endpoint
 
-// models, pets, staff, services,  staff-services
-
+// GET ALL STAFF
 router.get("/", async (req, res) => {
-  const staff = await Staff.findAll().catch((err) => res.status(500).json(err))
+  const staff = await Staff.findAll({
+    include: 
+      [{model: Services,
+        through: StaffServices,
+        as: 'staff_service'},
+    ]})
+  .catch((err) => res.status(500).json(err))
   res.status(200).json(staff);
 });
 
+
+// GET STAFF BY ID
 router.get("/:id", async (req, res) => {
-  const staff = await Staff.findByPk(req.params.id).catch((err) => res.status(500).json(err));
+  const staff = await Staff.findByPk(req.params.id, {
+    include: 
+      [{model: Services,
+        through: StaffServices,
+        as: 'staff_service'},
+    ]})
+  .catch((err) => res.status(500).json(err));
   res.status(200).json(staff);
 });
 
+
+
+
+
+// NOT DONE YET
 router.post("/staff/", async (req, res) => {
   // create a new category
   const staffdata = req.body;
@@ -22,6 +39,8 @@ router.post("/staff/", async (req, res) => {
   return res.json(staff);
 });
 
+
+// NOT DONE YET
 router.put("/staff/:id", async (req, res) => {
   // update a category by its `id` value
   const staffData = req.body;
@@ -31,6 +50,8 @@ router.put("/staff/:id", async (req, res) => {
   res.json(staff);
 });
 
+
+// NOT DONE YET
 router.delete("/staff/:id", async (req, res) => {
   // delete a category by its `id` value
   const staff = await staff.findOne({ _id: req.params.id });
