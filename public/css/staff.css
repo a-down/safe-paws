@@ -1,3 +1,4 @@
+/* STANDARD FLEXBOX SETUP */
 main,
 .leaders-section,
 .leaders-content,
@@ -17,6 +18,8 @@ form {
   align-items: center;
 }
 
+
+/* WIDTH DIMENSIONS */
 main,
 .team-wrapper {
   width: 100%;
@@ -29,6 +32,8 @@ main,
   width: 80%;
 }
 
+
+/* LEADERS SECTION */
 .leaders-section {
   flex-direction: column;
   justify-content: flex-start;
@@ -82,6 +87,8 @@ main,
   padding: 40px 0 40px 0;
 }
 
+
+/* OUR TEAM SECTION */
 .team-wrapper {
   background-color: var(--brand-light);
 }
@@ -123,6 +130,8 @@ main,
   align-items: flex-start;
 }
 
+
+/* CONTACT US SECTION */
 .contact-us-section {
   padding-top: 40px;
   justify-content: flex-start;
@@ -141,6 +150,7 @@ form {
 }
 
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 1165px) {
   .leaders-content {
     flex-direction: column;

@@ -127,6 +127,19 @@ main {
   justify-content: flex-start;
 }
 
+
+/* MODALS */
+#add-pet-image-btn {
+  display: block;
+  background-color: lightgray;
+}
+
+#add-pet-image-btn:hover {
+  background-color: var(--brand-primary-faded);
+}
+
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 460px) {
   .account-section button {
     font-weight: 400;
