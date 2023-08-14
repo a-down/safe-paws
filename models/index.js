@@ -16,7 +16,7 @@ User.hasMany(Pets, {
   onDelete: 'CASCADE',
 });
 
-Pets.hasOne(User, {
+Pets.belongsTo(User, {
   foreignKey: 'user_id', 
 });
 
@@ -26,7 +26,7 @@ Services.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(Services, {
+Bookings.belongsTo(Services, {
   foreignKey: 'service_id',
 });
 
@@ -36,7 +36,7 @@ Pets.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(Pets, {
+Bookings.belongsTo(Pets, {
   foreignKey: 'pet_id',
 });
 
@@ -46,7 +46,7 @@ User.hasMany(Reviews, {
   onDelete: 'CASCADE',
 });
 
-Reviews.hasOne(User, {
+Reviews.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -56,12 +56,12 @@ User.hasMany(Bookings, {
   onDelete: 'CASCADE',
 });
 
-Bookings.hasOne(User, {
+Bookings.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
 //staff can have many services, services can have many staff
-Staff.belongstoMany(Services, {
+Staff.belongsToMany(Services, {
   through: {
     model: StaffServices,
     unique: false
@@ -69,7 +69,7 @@ Staff.belongstoMany(Services, {
   as: 'staff_service'
 });
 
-Services.belongstoMany(Staff, {
+Services.belongsToMany(Staff, {
   through: {
     model: StaffServices,
     unique: false
@@ -78,8 +78,8 @@ Services.belongstoMany(Staff, {
 });
 
 
-{
 module.exports = 
+{
   User,
   Pets,
   Services,

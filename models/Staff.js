@@ -25,7 +25,7 @@ Staff.init(
       allowNull: true,
     },
     service_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'services',

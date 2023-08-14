@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../connection/config.js');
+const sequelize = require('../connection/config');
 
 class Reviews extends Model { }
 
@@ -13,7 +13,7 @@ Reviews.init(
       autoIncrement: true,
     },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
