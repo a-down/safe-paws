@@ -1,3 +1,4 @@
+/* FLEXBOX CREATOR */
 main,
 header,
 .hero-section,
@@ -24,6 +25,8 @@ header {
   position: absolute;
 }
 
+
+/* HERO */
 .hero-section {
   width: 100%;
 }
@@ -47,12 +50,16 @@ main {
   flex-direction: column;
 }
 
+
+/* ELEMENT WIDTHS */
 .about-section,
 .furry-friends-section,
 .reviews-section {
   width: 80%;
 }
 
+
+/* ABOUT SECTION */
 .about-section {
   min-height: 546px;
   flex-direction: column;
@@ -84,6 +91,8 @@ li {
   list-style-position: outside;
 }
 
+
+/* FURRY FRIENDS SECTION */
 .furry-friends-wrapper {
   padding: 20px 0 20px 0;
   min-height: 452px;
@@ -125,6 +134,7 @@ li {
   box-shadow: var(--brand-shadow);
 }
 
+/* REVIEWS SECTION */
 .reviews-section {
   margin-top: 40px;
   min-height: 312px;
@@ -159,7 +169,7 @@ li {
 }
 
 
-
+/* MEDIA QUERIES */
 @media screen and (max-width: 1278px) {
   .header-text {
     top: 99px;

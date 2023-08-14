@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Pet, Product } = require("../../models");
+const { Pets, Products } = require("../../models");
 
 // The `/api/pets/` endpoint
 
@@ -14,7 +14,7 @@ router.get("/pets/", async (req, res) => {
 
 router.get("/pets/:id", async (req, res) => {
   // find one category by its `id` value
-  const pet = await Pet.find({ _id: req.params.id });
+  const pet = await Pet.findByPK({ _id: req.params.id });
   // be sure to include its associated Products
   res.json(pet);
 });
