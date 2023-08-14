@@ -2,6 +2,8 @@
 
 
 document.querySelector("#submit-contact-btn").addEventListener('click', submitConact)
+document.querySelector(".book-service-butn").addEventListener('click', getBookings)
+
 
 function submitConact (event) {
   event.preventDefault()
