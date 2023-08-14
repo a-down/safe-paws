@@ -38,6 +38,10 @@ footer img {
   gap: 25px;
 }
 
+.white-paw {
+  display: none;
+}
+
 header a, footer a {
   color: black;
 }
