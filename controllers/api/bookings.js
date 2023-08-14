@@ -5,18 +5,14 @@ const { Bookings, Products } = require("../../models");
 
 // models, pets, staff, services,  staff-services
 
-router.get("/Bookings/", async (req, res) => {
-  // find all categories
-  const Bookings = await Bookings.findAll();
-  // be sure to include its associated Products
-  res.json(Bookings);
+router.get("/", async (req, res) => {
+  const bookings = await Bookings.findAll().catch((err) => res.status(500).json(err));
+  res.status(200).json(bookings);
 });
 
-router.get("/Bookings/:id", async (req, res) => {
-  // find one category by its `id` value
-  const Bookings = await Bookings.findByPK({ _id: req.params.id });
-  // be sure to include its associated Products
-  res.json(Bookings);
+router.get("/:id", async (req, res) => {
+  const bookings = await Bookings.findByPk(req.params.id).catch((err) => res.status(500).json(err));
+  res.json(bookings);
 });
 
 router.post("/Bookings/", async (req, res) => {

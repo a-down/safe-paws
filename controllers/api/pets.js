@@ -1,45 +1,33 @@
 const router = require("express").Router();
-const { Pets, Products } = require("../../models");
+const { Pets, Products, User } = require("../../models");
 
 // The `/api/pets/` endpoint
 
 // models, pets, staff, services,  staff-services
 
-router.get("/pets/", async (req, res) => {
-  // find all categories
-  const pets = await Pet.findAll();
-  // be sure to include its associated Products
-  res.json(pets);
+router.get("/", async (req, res) => {
+  const pets = await Pets.findAll({include: [{model: User}]}).catch((err) => res.status(500).json(err));
+  res.status(200).json(pets);
 });
 
-router.get("/pets/:id", async (req, res) => {
-  // find one category by its `id` value
-  const pet = await Pet.findByPK({ _id: req.params.id });
-  // be sure to include its associated Products
-  res.json(pet);
+router.get("/:id", async (req, res) => {
+  const pet = await Pets.findByPk(req.params.id, {include: [{model: User}]}).catch((err) => res.status(500).json(err));
+  res.status(200).json(pet);
 });
 
-router.post("/pets/", async (req, res) => {
-  // create a new category
-  const petdata = req.body;
-  const pet = await Pet.create(petData);
-  return res.json(pet);
+router.post("/", async (req, res) => {
+  await Pets.create(req.body).catch((err) => res.status(500).json(err));
+  return res.status(200).json({message: 'New pet created', newUser: req.body});
 });
 
-router.put("/pets/:id", async (req, res) => {
-  // update a category by its `id` value
-  const petData = req.body;
-  const pet = await Pet.findOne({ _id: req.params.id });
-  pet.update(petData, { _id: req.params.id });
-  await pet.reload();
-  res.json(pet);
+router.put("/:id", async (req, res) => {
+  await Pets.update(req.body, {where: {id: req.params.id}} ).catch((err) => res.status(500).json(err));
+  res.status(200).json({message: 'Pet updated', updatedData: req.body});
 });
 
-router.delete("/pets/:id", async (req, res) => {
-  // delete a category by its `id` value
-  const pet = await Pet.findOne({ _id: req.params.id });
-  pet.destroy();
-  return res.json(pet);
+router.delete("/:id", async (req, res) => {
+  await Pets.destroy({where: {id: req.params.id}}).catch((err) => res.status(500).json(err));
+  return res.status(200).json({message: 'Pet removed'});
 });
 
 module.exports = router;
