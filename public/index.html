@@ -46,12 +46,18 @@
   <header>
     <div class="header-content">
       <div class="branding">
-        <img src="./img/pawprint.png"/>
+        <a href="../public/index.html" class="homepage-link">
+          <img src="../public/img/pawprint.png" class="main-logo"/>
+          <img src="../public/img/pawprint-white.png" class="alt-logo"/>
+        </a>
         <h1 class="header-text"><span class="header-first-part">Know they're in </span><span class="title-color">Safe Paws</span></h1>
       </div>
       <nav>
-        <a>Our Team</a>
-        <img src="./img/user.png"/>
+        <!-- update with route -->
+        <a href="../public/staff.html">Our Team</a>
+        <a href="../public/img/profile.html" class="profile-link">
+          <img src="../public/img/user.png"/>
+        </a>
       </nav>
     </div>
   </header>
@@ -80,7 +86,7 @@
           </ul>
         </div>
       </div>
-      <button class="meet-our-team btn-primary">Meet our team!</button>
+      <button class="meet-our-team button-primary">Meet our team!</button>
     </section>
 
     <div class="furry-friends-wrapper">
@@ -132,11 +138,16 @@
 
   <footer>
     <div class="footer-content">
-      <a>Contact Us</a>
+      <a href="../public/staff.html">Contact Us</a>
       <div class="socials">
-        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2xl" style="color: #000000;"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #000000;"></i></a>
-        <a href="https://www.snapchat.com" target="_blank"><i class="fa-brands fa-snapchat fa-2xl" style="color: #000000;"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2xl main-logo" style="color: #000000;"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2xl alt-logo" style="color: #ffffff;"></i></a>
+
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2xl main-logo" style="color: #000000;"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-instagram fa-2xl alt-logo" style="color: #ffffff;"></i></a>
+
+        <a href="https://www.snapchat.com" target="_blank"><i class="fa-brands fa-snapchat fa-2xl main-logo" style="color: #000000;"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-snapchat fa-2xl alt-logo" style="color: #ffffff;"></i></a>
       </div>
     </div>
   </footer>
@@ -157,9 +168,8 @@
   crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="./js/script.js"></script>  
   <script src="./js/swiper.js"></script>
-  <script src="./js/booking.js"></script>
+  <script src="./js/main.js"></script>
   
 </body>
 </html>

@@ -124,7 +124,7 @@
           <div class="swiper-button-next"></div>
         </div>
 
-        <button class="btn-primary add-booking-btn">Add a booking!</button>
+        <button class="button-primary add-booking-btn">Add a booking!</button>
       </section>
     </div>
 
@@ -138,9 +138,9 @@
         <p>Address: 123 Chicago Rd, Chicago, IL 55555</p>
         <p>Pets: Fido, Skittles</p>
         <div class="account-btn-wrapper">
-          <button class="btn-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
-          <button class="btn-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
-          <button class="btn-primary-opp remove-pet-btn" data-mdb-toggle="modal" data-mdb-target="#removePetModal">Remove Pet</button>
+          <button class="button-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
+          <button class="button-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
+          <button class="button-primary-opp remove-pet-btn" data-mdb-toggle="modal" data-mdb-target="#removePetModal">Remove Pet</button>
         </div>
       </div>
     </section>
@@ -208,6 +208,9 @@
               <textarea class="form-control" id="pet-details-input" rows="4"></textarea>
               <label class="form-label" for="pet-details-input">Enter special instructions or special details.</label>
             </div>
+
+            <button class="form-button" id="add-pet-image-btn">Add pet photo</button>
+
             <button type="submit" class="form-button" id="add-mdl-btn">Add Pet</button>
           </form>
         </div>
@@ -268,9 +271,13 @@
   integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
   crossorigin="anonymous"></script>
 
+  <!-- Uploader -->
+  <script src="https://js.upload.io/uploader/v3"></script>
+
   <!-- JS -->
   <script src="./js/script.js"></script>  
   <script src="./js/swiper.js"></script>
+  <script src="./js/uploader.js"></script>
   
 </body>
 </html>

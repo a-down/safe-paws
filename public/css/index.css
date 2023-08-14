@@ -142,7 +142,7 @@ li {
   width: 240px;
   flex: 1;
   box-shadow: var(--brand-shadow);
-  border: 1px solid black;
+  border: 1px solid lightgray;
   border-radius: 5px;
   padding: 0 5px 0 5px;
 }
