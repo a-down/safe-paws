@@ -61,7 +61,7 @@ Bookings.hasOne(User, {
 });
 
 //staff can have many services, services can have many staff
-Staff.belongstoMany(Services, {
+Staff.belongsToMany(Services, {
   through: {
     model: StaffServices,
     unique: false
@@ -69,7 +69,7 @@ Staff.belongstoMany(Services, {
   as: 'staff_service'
 });
 
-Services.belongstoMany(Staff, {
+Services.belongsToMany(Staff, {
   through: {
     model: StaffServices,
     unique: false

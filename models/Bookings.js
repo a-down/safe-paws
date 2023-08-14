@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../connection/config.js');
 const sequelize = require('../connection/config.js');
 
 class Bookings extends Model { }
