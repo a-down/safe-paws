@@ -10,9 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  // find one category by its `id` value
   const user = await User.findByPk(req.params.id);
-  // be sure to include its associated Products
   res.status(200).json(user);
 });
 
