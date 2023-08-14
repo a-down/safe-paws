@@ -44,6 +44,16 @@ async function beginBooking (event) {
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
   })
+  .then(response => {
+    return response.json ()
+    })
+    .then (data => {console.log((data))
+        resultContainer.innerHTML = ((data).staff.staff_name); //placeholder data to change
+   
+    })
+    .catch(err => {
+    console.error(err);
+    });
 }
 
 //submits the information from both forms
