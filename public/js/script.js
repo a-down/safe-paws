@@ -59,7 +59,7 @@ addImageBtn.on('click', async (e) => {
       console.log('No files selected.')
     } else {
       console.log('Pet Picture added!');
-      const imageUrl = files.map(f => f.editedFile);
+      const imageUrl = files.map(editedFile => editedFile.fileUrl);
       return imageUrl
     }
   }).catch(err => {

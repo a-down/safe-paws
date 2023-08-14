@@ -11,3 +11,4 @@ function submitConact (event) {
   let queryString = './staff.html'
   location.assign(queryString)
 }
+
