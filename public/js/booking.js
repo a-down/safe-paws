@@ -91,3 +91,5 @@ async function submitBooking (event) {
     alert(response.statusText)
   }
 }
+
+

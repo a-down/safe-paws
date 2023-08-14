@@ -8,9 +8,7 @@ document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
 document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
 const addImageBtn = $('#add-pet-image-btn');
-const uploader = Uploader({
-  apiKey: "free"
-});
+const uploader = Uploader({apiKey: "free"});
 
 //fetch call once you hit the remove button on modal
 async function removePet (event) {
@@ -39,12 +37,29 @@ let imageString
 addImageBtn.on('click', async (e) => {
   e.preventDefault()
 
-  imageString = await uploader.open({ multi: false }).then(files => {
+  imageString = await uploader.open({ 
+    multi: false,
+    mimeTypes: ["image/*"],
+    editor: {
+      images: {
+        crop: true,
+        cropShape: "circ", // "rect" also supported.
+        cropRatio: 1 / 1   // "1" is enforced for "circ".
+      },
+      styles: {
+        colors: {
+          primary: '#db7f67',
+          active: '#db7f67',
+          shade500: '#db7f67', 
+        }
+    }
+    }
+   }).then(files => {
     if (files.length === 0) {
       console.log('No files selected.')
     } else {
       console.log('Pet Picture added!');
-      const imageUrl = files.map(f => f.fileUrl);
+      const imageUrl = files.map(f => f.editedFile);
       return imageUrl
     }
   }).catch(err => {
@@ -61,7 +76,8 @@ async function addPet (event) {
   const petId = selected.value //this only returns a number not a species name
   const petName = document.querySelector('#pet-name-input').value.trim()
   const specialInst = document.querySelector('#pet-details-input').value.trim()
-  console.log(petName, petId, specialInst)
+  const petImg = imageString
+  console.log(petName, petId, specialInst, petImg)
 
   if (petType && petId) {
     const response = await fetch('/api/add', {
@@ -69,7 +85,8 @@ async function addPet (event) {
       body: JSON.stringify({
         pet_name: petName,
         pet_type: petId,
-        special_details: specialInst
+        special_details: specialInst,
+        pet_img: petImg
       }),
       headers: {'Content-Type': 'application/json'}
     })
@@ -77,7 +94,7 @@ async function addPet (event) {
       console.log('Success!')
       document.location.replace('/profile')
     } else {
-      alert(response.statusText) // uploader here or above? do we send img data to db?
+      alert(response.statusText) 
     }
   }
 }
