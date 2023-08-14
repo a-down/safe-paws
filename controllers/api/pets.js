@@ -5,17 +5,13 @@ const { Pets, Products } = require("../../models");
 
 // models, pets, staff, services,  staff-services
 
-router.get("/pets/", async (req, res) => {
-  // find all categories
-  const pets = await Pet.findAll();
-  // be sure to include its associated Products
-  res.json(pets);
+router.get("/", async (req, res) => {
+  const pets = await Pets.findAll().catch((err) => res.status(500).json(err));
+  res.status(200).json(pets);
 });
 
-router.get("/pets/:id", async (req, res) => {
-  // find one category by its `id` value
-  const pet = await Pet.findByPK({ _id: req.params.id });
-  // be sure to include its associated Products
+router.get("/:id", async (req, res) => {
+  const pet = await Pets.findByPk(req.params.id).catch((err) => res.status(500).json(err));
   res.json(pet);
 });
 

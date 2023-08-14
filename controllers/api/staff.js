@@ -1,22 +1,18 @@
 const router = require("express").Router();
-const { staff, Products } = require("../../models");
+const { Staff, Products } = require("../../models");
 
 // The `/api/pets/` endpoint
 
 // models, pets, staff, services,  staff-services
 
-router.get("/staff/", async (req, res) => {
-  // find all categories
-  const staff = await staff.findAll();
-  // be sure to include its associated Products
-  res.json(staff);
+router.get("/", async (req, res) => {
+  const staff = await Staff.findAll().catch((err) => res.status(500).json(err))
+  res.status(200).json(staff);
 });
 
-router.get("/staff/:id", async (req, res) => {
-  // find one category by its `id` value
-  const staff = await staff.findByPK({ _id: req.params.id });
-  // be sure to include its associated Products
-  res.json(staff);
+router.get("/:id", async (req, res) => {
+  const staff = await Staff.findByPk(req.params.id).catch((err) => res.status(500).json(err));
+  res.status(200).json(staff);
 });
 
 router.post("/staff/", async (req, res) => {
