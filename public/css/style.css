@@ -1,3 +1,4 @@
+/* ELEMENTS IN MAIN HANDLEBARS LAYOUT */
 header, 
 .branding, 
 nav,
@@ -10,6 +11,8 @@ footer,
   align-items: center;
 }
 
+
+/* HEADER AND FOOTER */
 header, footer {
   background-color: var(--brand-primary);
   height: 60px;

@@ -127,6 +127,8 @@ main {
   justify-content: flex-start;
 }
 
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 460px) {
   .account-section button {
     font-weight: 400;
