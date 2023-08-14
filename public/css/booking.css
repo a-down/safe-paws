@@ -1,0 +1,43 @@
+main,
+.booking-heading,
+.booking-form,
+.booking-form-1,
+.booking-form-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  margin: 0 10% 0 10%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.booking-heading {
+  width: 80%;
+  height: 120px;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.booking-form-wrapper {
+  width: 80%;
+}
+
+.booking-form,
+.booking-form-1,
+.booking-form-2 {
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 616px) {
+  .booking-heading {
+    height: 80px;
+  }
+}

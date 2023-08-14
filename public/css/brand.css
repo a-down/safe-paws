@@ -11,9 +11,13 @@ h4,
 h5, 
 h6, 
 .btn-primary,
-.btn-primary-opp {
+.btn-primary-opp,
+.form-button {
   font-family: 'Markazi Text', serif;
   font-weight: 700;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2 {
@@ -22,6 +26,7 @@ h1, h2 {
 
 h3 {
   font-size: 48px;
+  line-height: 1;
 }
 
 h4 {
@@ -32,29 +37,23 @@ h5 {
   font-size: 30px;
 }
 
-p, a {
+p, 
+a, 
+label, 
+input, 
+textarea, 
+select,
+small,
+li {
   font-family: 'Hubballi', cursive;
   font-size: 24px;
+  margin: 0;
 } 
 
-.btn-primary {
-  width: 245px;
-  height: 80px;
-  background-color: var(--brand-primary);
-  border-radius: 15px;
-  font-size: 30px;
-  color: white;
-  border: none;
-  box-shadow: var(--brand-shadow);
+a {
+  color: black;
 }
 
-.btn-primary-opp {
-  width: 245px;
-  height: 80px;
-  background-color: white;
-  border-radius: 15px;
-  font-size: 30px;
-  color: black;
-  border: 2px solid var(--brand-primary);
-  box-shadow: var(--brand-shadow);
+small {
+  font-size: 12px;
 }

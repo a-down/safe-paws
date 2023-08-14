@@ -3,7 +3,8 @@ header,
 nav,
 .header-content,
 footer,
-.footer-content {
+.footer-content,
+.socials {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +13,7 @@ footer,
 header, footer {
   background-color: var(--brand-primary);
   height: 60px;
-  width: 100%;
+  width: 100vw;
   box-shadow: var(--brand-shadow);
 }
 
@@ -41,6 +42,76 @@ header h3 {
   color: white;
 }
 
+@media screen and (max-width: 500px) {
+  header h3 {
+    display: none;
+  }
+}
+
 .footer-content {
   justify-content: space-between;
+}
+
+.socials {
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+/* MODALS */
+.modal form {
+  margin: 10px 10% 0 10%;
+  width: 80%;
+}
+
+.modal h5 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-outline, .select-outline {
+  margin-bottom: 20px;
+}
+
+
+/* BUTTONS */
+button {
+  line-height: 1;
+}
+
+.btn-primary {
+  width: 200px;
+  height: 60px;
+  background-color: var(--brand-primary);
+  border-radius: 15px;
+  font-size: 24px;
+  color: white;
+  border: none;
+  box-shadow: var(--brand-shadow);
+  padding: 2px;
+}
+
+.btn-primary-opp {
+  width: 200px;
+  height: 60px;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 24px;
+  color: black;
+  border: 2px solid var(--brand-primary);
+  box-shadow: var(--brand-shadow);
+  padding: 2px;
+}
+
+.form-button {
+  width: 120px;
+  height: 40px;
+  background-color: var(--brand-primary);
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  box-shadow: var(--brand-shadow);
+  margin-bottom: 20px;
 }

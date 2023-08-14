@@ -1,3 +1,7 @@
+
+
+
+
 const User = require('./User');
 const Pets = require('./Pets');
 const Services = require('./Services');
@@ -13,7 +17,7 @@ User.hasMany(Pets, {
 });
 
 Pets.hasOne(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'user_id', 
 });
 
 //services have many bookings, bookings have one service
@@ -74,17 +78,8 @@ Services.belongstoMany(Staff, {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-module.exports = {
+{
+module.exports = 
   User,
   Pets,
   Services,
