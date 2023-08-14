@@ -15,4 +15,4 @@ uploader.open({ multi: false }).then(files => {
   console.error(err);
 });
 
-module.exports = uploader;
+module.exports = uploader

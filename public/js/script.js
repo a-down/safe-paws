@@ -1,7 +1,7 @@
 
 
 
-// const uploader = require('./uploader')
+// const uploader = require('../public/js/uploader')
 
 document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
