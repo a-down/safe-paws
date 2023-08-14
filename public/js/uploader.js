@@ -1,18 +1,26 @@
-const { Uploader } = require("uploader");
+// const uploader = Uploader({
+//   apiKey: "free"
+// });
 
-const uploader = Uploader({
-  apiKey: "free"
-});
+// const addImageBtn = $('#add-pet-image-btn');
 
-uploader.open({ multi: false }).then(files => {
-  if (files.length === 0) {
-    console.log('No files selected.')
-  } else {
-    console.log('Pet Picture added!');
-    console.log(files.map(f => f.fileUrl));
-  }
-}).catch(err => {
-  console.error(err);
-});
+// addImageBtn.on('click', async (e) => {
+//   e.preventDefault()
 
-module.exports = uploader
+//   const imageString = await uploader.open({ multi: false }).then(files => {
+//     if (files.length === 0) {
+//       console.log('No files selected.')
+//     } else {
+//       console.log('Pet Picture added!');
+//       const imageUrl = files.map(f => f.fileUrl);
+//       return imageUrl
+//     }
+//   }).catch(err => {
+//     console.error(err);
+//   });
+
+//  console.log(imageString)
+// })
+
+
+// module.exports = uploader

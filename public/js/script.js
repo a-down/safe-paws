@@ -7,6 +7,10 @@ document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
 document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
+const addImageBtn = $('#add-pet-image-btn');
+const uploader = Uploader({
+  apiKey: "free"
+});
 
 //fetch call once you hit the remove button on modal
 async function removePet (event) {
@@ -30,8 +34,27 @@ async function removePet (event) {
 }
 
 
+let imageString
+
+addImageBtn.on('click', async (e) => {
+  e.preventDefault()
+
+  imageString = await uploader.open({ multi: false }).then(files => {
+    if (files.length === 0) {
+      console.log('No files selected.')
+    } else {
+      console.log('Pet Picture added!');
+      const imageUrl = files.map(f => f.fileUrl);
+      return imageUrl
+    }
+  }).catch(err => {
+    console.error(err);
+  });
+})
+
 //fetch call once you hit the add pet button on modal
 async function addPet (event) {
+  console.log(imageString)
   event.preventDefault();
   console.log('add button')
   const selected = document.querySelector('#pet-type-select')
@@ -57,7 +80,6 @@ async function addPet (event) {
       alert(response.statusText) // uploader here or above? do we send img data to db?
     }
   }
-
 }
 
 
