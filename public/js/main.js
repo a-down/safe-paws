@@ -1,11 +1,11 @@
-const blackPaw = $('.black-paw');
-const whitePaw = $('.white-paw');
+const mainLogo = $('.main-logo');
+const hoverLogo = $('.alt-logo');
 const homeLink = $('.homepage-link');
 
 homeLink.on('mouseenter', () => {
-  blackPaw.attr('style', 'display: none');
-  whitePaw.attr('style', 'display: inline');
+  mainLogo.attr('style', 'display: none');
+  hoverLogo.attr('style', 'display: inline');
 }).on('mouseleave', () => {
-  blackPaw.attr('style', 'display: inline');
-  whitePaw.attr('style', 'display: none');
+  mainLogo.attr('style', 'display: inline');
+  hoverLogo.attr('style', 'display: none');
 })

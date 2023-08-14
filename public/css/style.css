@@ -50,17 +50,12 @@ header a:hover, footer a:hover {
   color: white;
 }
 
-/* .homepage-link:hover {
-  border-radius: 10px;
-  background-color: var(--brand-primary-transparent);
-} */
-
 .profile-link {
   border-radius: 50px;
 }
 
 .profile-link:hover {
-  background-color: var(--brand-primary);
+  background-color: white;
 }
 
 header h3 {
