@@ -1,20 +1,30 @@
 const router = require("express").Router();
-const { Services, Products} = require("../../models");
+const { Services, Products, Staff, StaffServices} = require("../../models");
 
-// The `/api/pets/` endpoint
 
-// models, pets, staff, services,  staff-services
-
+// GET ALL STAFF
 router.get("/", async (req, res) => {
-  const services = await Services.findAll().catch((err) => res.status(500).json(err))
-  res.json(services);
+  const data = await Services.findAll({
+    include: 
+    [{model: Staff,
+      through: StaffServices,
+      as: 'service_staff'
+    }]})
+  .catch((err) => res.status(500).json(err));
+  res.status(200).json(data);
 });
 
+
+// GET STAFF BY ID
 router.get("/:id", async (req, res) => {
   const service = await Services.findByPk(req.params.id).catch((err) => res.status(500).json(err));
-  res.json(service);
+  res.status(200).json(service);
 });
 
+
+
+
+// NOT DONE YET
 router.post("/Services/", async (req, res) => {
   // create a new category
   const servicesdata = req.body;
@@ -22,6 +32,7 @@ router.post("/Services/", async (req, res) => {
   return res.json(Services);
 });
 
+// NOT DONE YET
 router.put("/Services/:id", async (req, res) => {
   // update a category by its `id` value
   const servicesData = req.body;
@@ -31,6 +42,7 @@ router.put("/Services/:id", async (req, res) => {
   res.json(services);
 });
 
+// NOT DONE YET
 router.delete("/Services/:id", async (req, res) => {
   // delete a category by its `id` value
   const services = await services.findOne({ _id: req.params.id });
