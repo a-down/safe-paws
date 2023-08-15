@@ -1,10 +1,14 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth')
+const { User, Pets } = require('../models')
 
 
 
 router.get('/profile', async (req, res) => {
-  res.render('profile')
+  const userData = await User.findByPk(1, {include: [{model: Pets}]})
+  const user = userData.get({ plain: true });
+  console.log(user)
+  res.render('profile', user)
 })
 
 router.use('/login', async (req, res) => {
