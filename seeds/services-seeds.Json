@@ -1,5 +1,6 @@
-[{"service_name":"pet sitting"},
-{"service_name":"pet training"},
-{"service_name":"pet training"},
-{"service_name":"pet grooming"},
-{"service_name":"pet boarding"}]
+[{"service_name":"Pet Sitting"},
+{"service_name":"Pet Grooming"},
+{"service_name":"Pet Walking"},
+{"service_name":"Pet Boarding"},
+{"service_name":"Pet Training"},
+{"service_name":"Pet Feeding"}]
