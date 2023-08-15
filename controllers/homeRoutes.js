@@ -19,7 +19,7 @@ router.use('/staff', async (req, res) => {
   res.render('staff')
 })
 
-router.use('/', async (req, res) => {
+router.use('/*', async (req, res) => {
   res.render('homepage');
 })
 
