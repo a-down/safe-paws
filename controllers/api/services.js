@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Services, Products, Staff, StaffServices} = require("../../models");
 
 
-// GET ALL STAFF
+// GET ALL SERVICES
 router.get("/", async (req, res) => {
   const data = await Services.findAll({
     include: 
@@ -15,9 +15,14 @@ router.get("/", async (req, res) => {
 });
 
 
-// GET STAFF BY ID
+// GET SERVICE BY ID
 router.get("/:id", async (req, res) => {
-  const service = await Services.findByPk(req.params.id).catch((err) => res.status(500).json(err));
+  const service = await Services.findByPk(req.params.id, {include: 
+    [{model: Staff,
+      through: StaffServices,
+      as: 'service_staff'
+    }]})
+  .catch((err) => res.status(500).json(err));
   res.status(200).json(service);
 });
 
