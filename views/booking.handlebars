@@ -37,8 +37,8 @@
           <label for="pet-select">Which pet is the service for?</label>
           <select name="type" class="form-control" id="pet-select">
             <option selected>Choose Pet</option>
-            <option value="1">Fido</option>
-            <option value="2">Skittles</option>
+            {{#each user.pets as |pet|}}<option value="{{pet.id}}">{{pet.pet_name}}</option>{{/each}}
+
           </select>
 
           <!-- POPULATE OPTION VALUES AND TEXT WITH GET CALL -->
@@ -46,8 +46,7 @@
           <label for="service-select">What service is the booking for?</label>
           <select name="type" class="form-control" id="service-select">
             <option selected>Choose Service</option>
-            <option value="1">Dog Walking</option>
-            <option value="2">Pet Sitting</option>
+            {{#each services as |service|}}<option value="{{service.id}}">{{service.service_name}}</option>{{/each}} 
           </select>
 
           <label for="special-instructions-input">Are there special instructions?</label>
