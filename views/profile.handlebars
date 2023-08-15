@@ -27,9 +27,9 @@
     <section class="profile-heading">
       <h1>Profile</h1>
       <div class="profile-pets">
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
+        {{#each pets as |pet|}}
+        <img src="{{pet.pet_img}}" alt="Image of user pet" height="117px" width="117px"/>
+        {{/each}}
       </div>
     </section>
 
@@ -99,11 +99,11 @@
     <section class="account-section">
       <h3>Account Settings</h3>
       <div class="account-information">
-        <p>Email: michaeljordan@gmail.com</p>
-        <p>Username: mjordan23</p>
+        <p>Email: {{email}}</p>
+        <p>Username: {{username}}</p>
         <p>Password: ****</p>
-        <p>Address: 123 Chicago Rd, Chicago, IL 55555</p>
-        <p>Pets: Fido, Skittles</p>
+        <p>Address: {{address}}</p>
+        <p>Pets: {{#each pets as |pet|}}{{pet.pet_name}}, {{/each}}</p>
         <div class="account-btn-wrapper">
           <button class="button-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
           <button class="button-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
@@ -125,19 +125,19 @@
         <div class="modal-body">
           <form>
             <div class="form-outline">
-              <input type="email" id="email-input" class="form-control" />
+              <input type="email" id="email-input" class="form-control"  value="{{email}}"/>
               <label class="form-label" for="email-input">Update Email</label>
             </div>
             <div class="form-outline">
-              <input type="text" id="username-input" class="form-control" />
+              <input type="text" id="username-input" class="form-control" value="{{username}}"/>
               <label class="form-label" for="username-input">Update Username</label>
             </div>
             <div class="form-outline">
-              <input type="password" id="password-input" class="form-control" />
-              <label class="form-label" for="password-input">Update Password</label>
+              <input type="password" id="password-input" class="form-control" value="{{password}}"/>
+              <label class="form-label" for="password-input" >Update Password</label>
             </div>
             <div class="form-outline">
-              <textarea class="form-control" id="address-input" rows="4"></textarea>
+              <input class="form-control" id="address-input" rows="4" value="{{address}}" placeholder="{{address}}"></input>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
             <button type="submit" class="form-button" id="update-mdl-btn">Update</button>
@@ -199,8 +199,9 @@
             <div class="select-outline">
             <select class="form-control" id="pet-to-remove-select">
               <option selected>Choose Pet</option>
-              <option value="1">Fido</option>
-              <option value="2">Skittles</option>
+              {{#each pets as |pet|}}
+              <option value="{{pet.id}}">{{pet.pet_name}}</option>
+              {{/each}}
             </select>
             </div>
 
@@ -210,8 +211,6 @@
       </div>
     </div>
   </div>
-
-  <!-- HANDLEBARS CUTTOFF -->
 
   <footer>
     <div class="footer-content">
