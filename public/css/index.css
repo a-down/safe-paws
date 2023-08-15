@@ -134,8 +134,10 @@ li {
 }
 
 .pet-photos img {
-  border-radius: 200px;
+  border-radius: 400px;
   box-shadow: var(--brand-shadow);
+  width: 240px;
+  height: 240px;
 }
 
 /* REVIEWS SECTION */
@@ -255,11 +257,11 @@ li {
 }
 
 @media screen and (max-width: 639px) {
-  .review-wrapper, 
+  /* .review-wrapper, 
   .pet-photos img, 
   .pet-photos h5 {
-    width: 90vw;
-  }
+    align-self: stretch;
+  } */
   .pet-photos img {
     border-radius: 300px;
   }
