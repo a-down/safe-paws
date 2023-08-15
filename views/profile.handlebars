@@ -199,8 +199,9 @@
             <div class="select-outline">
             <select class="form-control" id="pet-to-remove-select">
               <option selected>Choose Pet</option>
-              <option value="1">Fido</option>
-              <option value="2">Skittles</option>
+              {{#each pets as |pet|}}
+              <option value="{{pet.id}}">{{pet.pet_name}}</option>
+              {{/each}}
             </select>
             </div>
 
