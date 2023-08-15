@@ -25,6 +25,10 @@ header {
   position: absolute;
 }
 
+.profile-link:hover {
+  background-color: var(--brand-primary);
+}
+
 
 /* HERO */
 .hero-section {
@@ -130,8 +134,10 @@ li {
 }
 
 .pet-photos img {
-  border-radius: 200px;
+  border-radius: 400px;
   box-shadow: var(--brand-shadow);
+  width: 240px;
+  height: 240px;
 }
 
 /* REVIEWS SECTION */
@@ -166,6 +172,16 @@ li {
 
 .review-wrapper p {
   font-size: 18px;
+}
+
+
+/* HERO IMAGE SOURCE */
+.hero-image-source {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
 }
 
 
@@ -251,11 +267,11 @@ li {
 }
 
 @media screen and (max-width: 639px) {
-  .review-wrapper, 
+  /* .review-wrapper, 
   .pet-photos img, 
   .pet-photos h5 {
-    width: 90vw;
-  }
+    align-self: stretch;
+  } */
   .pet-photos img {
     border-radius: 300px;
   }

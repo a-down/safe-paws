@@ -28,12 +28,12 @@ async function loginFormHandler (event) {
       headers: { 'Content-Type': 'application/json' },
     })
   if (response.ok) {
-    document.location.replace('/profile')
+    alert('Logged in');
+    window.location.href = "/profile"
   } else {
     alert('Failed to sign in.')
   }
   }
-  
 }
 
 async function signUpFormHandler (event) {
