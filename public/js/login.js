@@ -33,7 +33,6 @@ async function loginFormHandler (event) {
     alert('Failed to sign in.')
   }
   }
-  
 }
 
 async function signUpFormHandler (event) {
