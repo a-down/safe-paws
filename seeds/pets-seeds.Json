@@ -1,5 +1,5 @@
-[{"pet_name":"Charlie","pet_type":"fish","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"confidential"},
-{"pet_name":"Lucy","pet_type":"bird","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"restricted"},
-{"pet_name":"Rocky","pet_type":"dog","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"important"},
-{"pet_name":"Sadie","pet_type":"hamster","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"restricted"},
-{"pet_name":"Lola","pet_type":"cat","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"restricted"}]
+[{"pet_name":"Charlie","pet_type":"dog","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"egg allergy"},
+{"pet_name":"Lucy","pet_type":"dog","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"cut on paw"},
+{"pet_name":"Rocky","pet_type":"cat","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"no belly scratches"},
+{"pet_name":"Sadie","pet_type":"dog","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"all bark no bite"},
+{"pet_name":"Lola","pet_type":"cat","pet_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop","user_id":1,"special_details":"no front claws"}]
