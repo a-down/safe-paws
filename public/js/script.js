@@ -1,28 +1,26 @@
+// const { get } = require("../../controllers/api/bookings");
 
 
-
-// const uploader = require('../public/js/uploader')
 
 document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
 document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
 const addImageBtn = $('#add-pet-image-btn');
-const uploader = Uploader({
-  apiKey: "free"
-});
+const uploader = Uploader({apiKey: "free"});
 
 //fetch call once you hit the remove button on modal
 async function removePet (event) {
   event.preventDefault();
   console.log('remove button')
-  const petRemoved = 'Skittles' //could use help with this functionality getting value
+  const selected = document.querySelector('#pet-to-remove-select')
+  petId = selected.value
   console.log(petRemoved)
 
-  const response = await fetch(`/api/remove/`, {
+  const response = await fetch(`/api/pets/${petId}`, {
     method: 'DELETE',
     body: JSON.stringify({
-      pet_name: petRemoved
+      pet_id : petId
     }),
     headers: {'Content-Type': 'application/json'}
   });
@@ -39,12 +37,29 @@ let imageString
 addImageBtn.on('click', async (e) => {
   e.preventDefault()
 
-  imageString = await uploader.open({ multi: false }).then(files => {
+  imageString = await uploader.open({ 
+    multi: false,
+    mimeTypes: ["image/*"],
+    editor: {
+      images: {
+        crop: true,
+        cropShape: "circ",
+        cropRatio: 1 / 1 
+      },
+      styles: {
+        colors: {
+          primary: '#db7f67',
+          active: '#db7f67',
+          shade500: '#db7f67', 
+        }
+    }
+    }
+   }).then(files => {
     if (files.length === 0) {
       console.log('No files selected.')
     } else {
       console.log('Pet Picture added!');
-      const imageUrl = files.map(f => f.fileUrl);
+      const imageUrl = files.map(editedFile => editedFile.fileUrl);
       return imageUrl
     }
   }).catch(err => {
@@ -58,18 +73,20 @@ async function addPet (event) {
   event.preventDefault();
   console.log('add button')
   const selected = document.querySelector('#pet-type-select')
-  const petId = selected.value //this only returns a number not a species name
+  const petType = selected.value
   const petName = document.querySelector('#pet-name-input').value.trim()
-  const specialInst = document.querySelector('#pet-details-input').value.trim()
-  console.log(petName, petId, specialInst)
+  const specialDetails = document.querySelector('#pet-details-input').value.trim()
+  const petImg = imageString
+  console.log(petName, petType, specialDetails, petImg)
 
   if (petType && petId) {
-    const response = await fetch('/api/add', {
+    const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
         pet_name: petName,
-        pet_type: petId,
-        special_details: specialInst
+        pet_type: petType,
+        special_details: specialDetails,
+        pet_img: petImg
       }),
       headers: {'Content-Type': 'application/json'}
     })
@@ -77,7 +94,7 @@ async function addPet (event) {
       console.log('Success!')
       document.location.replace('/profile')
     } else {
-      alert(response.statusText) // uploader here or above? do we send img data to db?
+      alert(response.statusText) 
     }
   }
 }
@@ -122,3 +139,42 @@ function addBooking () {
   let queryString = './booking.html'
   location.assign(queryString)
 }
+
+
+let userBookings 
+
+const getAndRenderBookings = () => getUserBookings().then(renderBookings)
+
+const getUserBookings = () =>
+  fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const renderBookings = async (bookings) => {
+    let jsonBookings = await bookings.json()
+    if (bookings)
+      userBookings.foreach()
+//not done here, 
+  }
+
+// getAndRenderBookings()
+
+
+const getUserProfile = () =>
+  fetch(`/api/user/2`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+const renderProfile = async (profile) => {
+  console.log(profile)
+}
+
+const getAndRenderProfile = () => getUserProfile().then(renderProfile)
+
+getAndRenderProfile()
