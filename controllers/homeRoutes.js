@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth')
 
 
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   res.render('profile')
 })
 
