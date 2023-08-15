@@ -41,7 +41,10 @@ footer img {
   gap: 25px;
 }
 
-.alt-logo {
+.alt-paw,
+.alt-fb,
+.alt-insta,
+.alt-snap {
   display: none;
 }
 

@@ -25,6 +25,10 @@ header {
   position: absolute;
 }
 
+.profile-link:hover {
+  background-color: var(--brand-primary);
+}
+
 
 /* HERO */
 .hero-section {
