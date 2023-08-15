@@ -2,12 +2,12 @@ const router = require('express').Router();
 
 
 
-router.use('/profile', async (req, res) => {
+router.get('/profile', async (req, res) => {
   res.render('profile')
 })
 
-router.use('/login', async (req, res) => {
-  res.render('login');
+  router.use('/login', async (req, res) => {
+res.render('login')
 })
 
 router.use('/', async (req, res) => {

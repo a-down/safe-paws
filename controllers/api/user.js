@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const session = require('express-session');
 const { User, Products, Pets } = require("../../models");
 
 
@@ -19,8 +20,28 @@ router.get("/:id", async (req, res) => {
 
 // POST NEW USER
 router.post("/", async (req, res) => {
-  await User.create(req.body).catch((err) => res.status(500).json(err));
-  return res.json({message: 'New user created', newUser: req.body});
+  // await User.create(req.body).catch((err) => res.status(500).json(err));
+  // return res.json({message: 'New user created', newUser: req.body});
+
+  try {
+    console.log(req.body)
+
+    const newUser = await User.create({
+      username: req.body.username,
+      email: 'aseva@email.com',
+      password: req.body.password,
+      address: req.body.address
+    });
+
+    req.session.save(() => {
+      req.session.loggedIn === true;
+      res.status(200).json({message: 'Profile created'})
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
