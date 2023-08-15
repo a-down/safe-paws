@@ -1,3 +1,4 @@
+// const { get } = require("../../controllers/api/bookings");
 
 
 
@@ -138,3 +139,42 @@ function addBooking () {
   let queryString = './booking.html'
   location.assign(queryString)
 }
+
+
+let userBookings 
+
+const getAndRenderBookings = () => getUserBookings().then(renderBookings)
+
+const getUserBookings = () =>
+  fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const renderBookings = async (bookings) => {
+    let jsonBookings = await bookings.json()
+    if (bookings)
+      userBookings.foreach()
+//not done here, 
+  }
+
+// getAndRenderBookings()
+
+
+const getUserProfile = () =>
+  fetch(`/api/user/2`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+const renderProfile = async (profile) => {
+  console.log(profile)
+}
+
+const getAndRenderProfile = () => getUserProfile().then(renderProfile)
+
+getAndRenderProfile()

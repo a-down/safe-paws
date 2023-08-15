@@ -72,7 +72,7 @@ async function submitBooking (event) {
   const staff = selectedStaff.value
   console.log(petName, serviceName, specialInst, date, time, staff)
 
-  const response = await fetch ('/api/booking/new', {
+  const response = await fetch ('/api/booking', {
     method: 'POST',
     body: JSON.stringify({
       pet_name: petName,
@@ -91,5 +91,3 @@ async function submitBooking (event) {
     alert(response.statusText)
   }
 }
-
-
