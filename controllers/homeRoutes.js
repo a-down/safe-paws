@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const getRandomNumber = require('../utils/randomNumber')
 const withAuth = require('../utils/auth')
 const { User, Pets } = require('../models')
 
@@ -24,7 +25,17 @@ router.use('/staff', async (req, res) => {
 })
 
 router.use('/*', async (req, res) => {
-  res.render('homepage');
+  const petData = await Pets.findAll().catch((err) => res.status(500).json(err))
+  const pets = petData.map((data) => data.get({plain: true}))
+  console.log(pets)
+
+  let petsArr
+
+  await () => {
+
+  }
+
+  res.render('homepage', pets);
 })
 
 module.exports = router;

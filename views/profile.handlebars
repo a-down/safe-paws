@@ -27,9 +27,9 @@
     <section class="profile-heading">
       <h1>Profile</h1>
       <div class="profile-pets">
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
-        <img src="https://placehold.co/117" alt="Image of user pet" height="117px" width="117px"/>
+        {{#each pets as |pet|}}
+        <img src="{{pet.pet_img}}" alt="Image of user pet" height="117px" width="117px"/>
+        {{/each}}
       </div>
     </section>
 
@@ -211,8 +211,6 @@
       </div>
     </div>
   </div>
-
-  <!-- HANDLEBARS CUTTOFF -->
 
   <footer>
     <div class="footer-content">
