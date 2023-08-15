@@ -125,19 +125,19 @@
         <div class="modal-body">
           <form>
             <div class="form-outline">
-              <input type="email" id="email-input" class="form-control" />
+              <input type="email" id="email-input" class="form-control"  value="{{email}}"/>
               <label class="form-label" for="email-input">Update Email</label>
             </div>
             <div class="form-outline">
-              <input type="text" id="username-input" class="form-control" />
+              <input type="text" id="username-input" class="form-control" value="{{username}}"/>
               <label class="form-label" for="username-input">Update Username</label>
             </div>
             <div class="form-outline">
-              <input type="password" id="password-input" class="form-control" />
-              <label class="form-label" for="password-input">Update Password</label>
+              <input type="password" id="password-input" class="form-control" value="{{password}}"/>
+              <label class="form-label" for="password-input" >Update Password</label>
             </div>
             <div class="form-outline">
-              <textarea class="form-control" id="address-input" rows="4"></textarea>
+              <input class="form-control" id="address-input" rows="4" value="{{address}}" placeholder="{{address}}"></input>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
             <button type="submit" class="form-button" id="update-mdl-btn">Update</button>
