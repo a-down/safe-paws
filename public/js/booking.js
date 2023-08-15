@@ -44,6 +44,16 @@ async function beginBooking (event) {
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
   })
+  .then(response => {
+    return response.json ()
+    })
+    .then (data => {console.log((data))
+        resultContainer.innerHTML = ((data).staff.staff_name); //placeholder data to change
+   
+    })
+    .catch(err => {
+    console.error(err);
+    });
 }
 
 //submits the information from both forms
@@ -62,7 +72,7 @@ async function submitBooking (event) {
   const staff = selectedStaff.value
   console.log(petName, serviceName, specialInst, date, time, staff)
 
-  const response = await fetch ('/api/booking/new', {
+  const response = await fetch ('/api/booking', {
     method: 'POST',
     body: JSON.stringify({
       pet_name: petName,
