@@ -28,7 +28,8 @@ async function loginFormHandler (event) {
       headers: { 'Content-Type': 'application/json' },
     })
   if (response.ok) {
-    document.location.replace('/profile')
+    alert('Profile created');
+    window.location.href = "/profile"
   } else {
     alert('Failed to sign in.')
   }
