@@ -24,14 +24,14 @@ Staff.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    service_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'services',
-        key: 'id',
-      },
-    }
+    // service_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    //   references: {
+    //     model: 'services',
+    //     key: 'id',
+    //   },
+    // }
   },
   {
     sequelize,

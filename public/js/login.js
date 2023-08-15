@@ -47,11 +47,12 @@ async function signUpFormHandler (event) {
   if (password === passwordConfirm && username && address){
     const response = await fetch ('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, password, address}),
+      body: JSON.stringify({ username: username, password: password, address: address }),
       headers: { 'Content-Type': 'application/json' },
     })
     if (response.ok) {
-      document.location.replace('/profile')
+      alert('Profile created.')
+      window.location.href = "/profile"
     } else {
       alert('Failed to sign-up. Please try again.')
     }

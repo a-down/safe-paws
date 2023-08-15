@@ -24,6 +24,10 @@ Bookings.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    time: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -40,9 +44,17 @@ Bookings.init(
         key: 'id',
       },
     },
+    staff_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'staff',
+        key: 'id',
+      },
+    },
     service_received: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      default: false
     }
   },
   {

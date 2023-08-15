@@ -12,14 +12,14 @@ StaffServices.init(
       primaryKey: true,
       autoIncrement: true
     },
-    staff_service: {
+    staff_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'staff',
         key: 'id',
       }
     },
-    service_staff: {
+    service_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'services',
@@ -32,7 +32,7 @@ StaffServices.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'staff_services',
   }
 );
 
