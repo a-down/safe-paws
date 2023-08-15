@@ -49,18 +49,12 @@
       <section class="furry-friends-section">
         <h3>Some of our Furry Friends</h3>
         <div class="pet-photos">
+          {{#each pets as |pet|}}
           <div class="pet-wrapper">
-            <img src="https://placehold.co/240" alt="Image of a pet served by Safe Paws"/>
-            <h5>Francis</h5>
+            <img src="{{pet.pet_img}}" alt="Image of a pet named {{pet.pet_name}} served by Safe Paws"/>
+            <h5>{{pet.pet_name}}</h5>
           </div>
-          <div class="pet-wrapper">
-            <img src="https://placehold.co/240" alt="Image of a pet served by Safe Paws"/>
-            <h5>Francis</h5>
-          </div>
-          <div class="pet-wrapper">
-            <img src="https://placehold.co/240" alt="Image of a pet served by Safe Paws"/>
-            <h5>Francis</h5>
-          </div>
+          {{/each}}
         </div>
       </section>
     </div>
@@ -98,7 +92,7 @@
         <a href="https://www.snapchat.com" target="_blank"><i class="fa-brands fa-snapchat fa-2xl main-logo" style="color: #000000;" alt="Black Snapchat Icon Link"></i></a>
       </div>
     </div>
-    <a href="https://www.pexels.com/photo/photo-of-grey-tabby-kitten-lying-down-2558605/" target="_blacnk" class="hero-image-source">Featured Photo by Anel Rossouw</a>
+    <a href="https://www.pexels.com/photo/photo-of-grey-tabby-kitten-lying-down-2558605/" target="_blank" class="hero-image-source">Featured Photo by Anel Rossouw</a>
   </footer>
 
   <!-- Swiper JS -->
