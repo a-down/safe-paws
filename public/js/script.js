@@ -42,8 +42,8 @@ addImageBtn.on('click', async (e) => {
     editor: {
       images: {
         crop: true,
-        cropShape: "circ", // "rect" also supported.
-        cropRatio: 1 / 1   // "1" is enforced for "circ".
+        cropShape: "circ",
+        cropRatio: 1 / 1 
       },
       styles: {
         colors: {
