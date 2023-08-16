@@ -18,9 +18,9 @@ loginLink.on('click', () => {
 
 async function loginFormHandler (event) {
   event.preventDefault()
-  const email = document.querySelector('#username-signup-input').value.trim()
-  const password =document.querySelector('#password-signup-input').value.trim()
-
+  const email = document.querySelector('#username-login-input').value.trim()
+  const password =document.querySelector('#password-login-input').value.trim()
+  console.log(email, password)
   if (email && password) {
     const response = await fetch('/api/login', {
       method: 'POST',
@@ -38,7 +38,7 @@ async function loginFormHandler (event) {
 
 async function signUpFormHandler (event) {
   event.preventDefault()
-  const email = document.querySelector('#email-sign-up-input').value.trim()
+  const email = document.querySelector('#email-signup-input').value.trim()
   const username = document.querySelector('#username-signup-input').value.trim()
   const password = document.querySelector('#password-signup-input').value.trim()
   const passwordConfirm = document.querySelector('#password-signup-confirm').value.trim()
