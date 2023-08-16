@@ -35,23 +35,36 @@ router.post("/", async (req, res) => {
 });
 
 
-// NOT DONE YET
+// Not test
 router.put("/Bookings/:id", async (req, res) => {
   // update a category by its `id` value
-  const BookingsData = req.body;
-  const Bookings = await Bookings.findOne({ _id: req.params.id });
-  Bookings.update(BookingsData, { _id: req.params.id });
-  await Bookings.reload();
-  res.json(Bookings);
+ try{
+const bookingData = await Bookings.update(req.body,{
+  where: {
+    id:req.params.id
+  }
+})
+res.status(200).json(bookingData)
+ }catch(err){
+  res.status(500).json(err)
+ }
 });
 
 
-// NOT DONE YET
+// NOT test
 router.delete("/Bookings/:id", async (req, res) => {
   // delete a category by its `id` value
-  const Bookings = await Bookings.findOne({ _id: req.params.id });
-  Bookings.destroy();
-  return res.json(Bookings);
+  try{
+    const bookingData = await Bookings.destroy(req.body,{
+      where: {
+        id:req.params.id
+      }
+    })
+    res.status(200).json(bookingData)
+     }catch(err){
+      res.status(500).json(err)
+     }
+  
 });
 
 module.exports = router;
