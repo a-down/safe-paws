@@ -6,6 +6,7 @@ document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
 document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
+
 const addImageBtn = $('#add-pet-image-btn');
 const uploader = Uploader({apiKey: "free"});
 
@@ -15,7 +16,7 @@ async function removePet (event) {
   console.log('remove button')
   const selected = document.querySelector('#pet-to-remove-select')
   petId = selected.value
-  console.log(petRemoved)
+  console.log(petId)
 
   const response = await fetch(`/api/pets/${petId}`, {
     method: 'DELETE',
@@ -79,7 +80,7 @@ async function addPet (event) {
   const petImg = imageString
   console.log(petName, petType, specialDetails, petImg)
 
-  if (petType && petId) {
+  if (petType && petName) {
     const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
@@ -111,7 +112,7 @@ async function updateAccount (event) {
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
-  console.log(email, username, password, address)
+  console.log(email, username, password, address,id)
   
   const response = await fetch(`api/users/${id}`, {
     method: 'PUT',
@@ -132,6 +133,22 @@ async function updateAccount (event) {
   }
 }
 
+//logout 
+const logout = async () => {
+  const response = await fetch('/api/users/logout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert('Failed to log out.');
+  }
+};
+
+document.querySelector("#logout").addEventListener('click', logout)
+
 
 //takes us to the booking page
 function addBooking () {
@@ -141,40 +158,40 @@ function addBooking () {
 }
 
 
-let userBookings 
+// let userBookings 
 
-const getAndRenderBookings = () => getUserBookings().then(renderBookings)
+// const getAndRenderBookings = () => getUserBookings().then(renderBookings)
 
-const getUserBookings = () =>
-  fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+// const getUserBookings = () =>
+//   fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
 
-  const renderBookings = async (bookings) => {
-    let jsonBookings = await bookings.json()
-    if (bookings)
-      userBookings.foreach()
-//not done here, 
-  }
+//   const renderBookings = async (bookings) => {
+//     let jsonBookings = await bookings.json()
+//     if (bookings)
+//       userBookings.foreach()
+// //not done here, 
+//   }
 
-// getAndRenderBookings()
+// // getAndRenderBookings()
 
 
-const getUserProfile = () =>
-  fetch(`/api/user/2`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+// const getUserProfile = () =>
+//   fetch(`/api/user/2`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   })
 
-const renderProfile = async (profile) => {
-  console.log(profile)
-}
+// const renderProfile = async (profile) => {
+//   console.log(profile)
+// }
 
-const getAndRenderProfile = () => getUserProfile().then(renderProfile)
+// const getAndRenderProfile = () => getUserProfile().then(renderProfile)
 
-getAndRenderProfile()
+// getAndRenderProfile()
