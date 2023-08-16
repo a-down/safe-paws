@@ -263,6 +263,7 @@ li {
 
   .pet-wrapper, .review-wrapper {
     align-items: stretch;
+    text-align: center;
   }
 }
 
