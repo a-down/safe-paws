@@ -31,6 +31,10 @@ a {
   display: block;
 }
 
+a:hover {
+  color: var(--brand-primary)
+}
+
 footer {
   position: fixed;
   bottom: 0;
