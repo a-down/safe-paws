@@ -89,8 +89,6 @@ const renderStaff = async (staff) => {
   console.log(jsonStaff)
   let serviceStaff = jsonStaff.service.service_staff
   console.log(serviceStaff)
-  const newOption = `<option value="1">Tessa</option>`
-
   serviceStaff.forEach((staff) => {
     let option = document.createElement('option')
     option.setAttribute('value', staff.id)
