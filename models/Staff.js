@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../connection/config.js');
 
-class Staff extends Model {}
+class Staff extends Model { }
 
 Staff.init(
   {
@@ -20,18 +20,18 @@ Staff.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    services_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'services',
+        key: 'id',
+      },
+    },
     staff_img: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    // service_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: 'services',
-    //     key: 'id',
-    //   },
-    // }
+    }
   },
   {
     sequelize,

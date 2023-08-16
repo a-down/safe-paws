@@ -16,14 +16,14 @@ Services.init(
       allowNull: false,
       isAlphanumeric: true
     },
-    // staff_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: 'staff',
-    //     key: 'id',
-    //   },
-    // }
+    staff_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'staff',
+        key: 'id',
+      },
+    }
   },
   {
     sequelize,

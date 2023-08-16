@@ -19,7 +19,7 @@ StaffServices.init(
         key: 'id',
       }
     },
-    service_id: {
+    services_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'services',
