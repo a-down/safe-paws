@@ -7,7 +7,7 @@ const { User, Pets, Services, Staff, Bookings } = require('../models')
 
 
 router.get('/profile', async (req, res) => {
-  const userData = await User.findByPk(2, {include: [{model: Pets}]})
+  const userData = await User.findByPk(1, {include: [{model: Pets}]})
   const user = userData.get({ plain: true });
 
   const serviceData = await Services.findAll().catch((err) => res.status(500).json(err))
@@ -20,8 +20,8 @@ router.get('/profile', async (req, res) => {
   const bookings = bookingData.map((booking) => booking.get({plain: true}))
 
   console.log(bookings)
+  // console.log(user)
 
-  console.log(user)
   res.render('profile', user)
 })
 

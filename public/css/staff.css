@@ -18,12 +18,20 @@ form {
   align-items: center;
 }
 
+/* FLEX DIRECTION COLUMN */
+main,
+.leaders-section,
+.our-team-section,
+.staff-text,
+form {
+  flex-direction: column;
+}
+
 
 /* WIDTH DIMENSIONS */
 main,
 .team-wrapper {
   width: 100%;
-  flex-direction: column;
 }
 
 .leaders-section,
@@ -35,7 +43,6 @@ main,
 
 /* LEADERS SECTION */
 .leaders-section {
-  flex-direction: column;
   justify-content: flex-start;
   min-height: 543px;
 }
@@ -95,7 +102,6 @@ main,
 
 .our-team-section {
   padding: 43px 0 43px 0;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 32px;
@@ -106,7 +112,6 @@ main,
   flex-wrap: wrap;
   justify-content: flex-start;
   flex-direction: row;
-  
 }
 
 .staff-member-wrapper {
@@ -126,7 +131,6 @@ main,
 }
 
 .staff-text {
-  flex-direction: column;
   align-items: flex-start;
 }
 
@@ -143,7 +147,6 @@ main,
 
 form {
   margin-top: 10px;
-  flex-direction: column;
   align-items: stretch;
   gap: 10px;
   max-width: 500px;
