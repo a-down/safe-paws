@@ -10,20 +10,19 @@ main,
 }
 
 main {
-  width: 100%;
   margin: 0 10% 0 10%;
   align-items: flex-start;
   flex-direction: column;
 }
 
 .booking-heading {
-  width: 80%;
   height: 120px;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-.booking-form-wrapper {
+.booking-form-wrapper,
+.booking-heading {
   width: 80%;
 }
 
