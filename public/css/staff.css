@@ -60,6 +60,7 @@ main,
   gap: 5px;
   position: relative;
   padding: 16px;
+  width: 50%;
 }
 
 .color-block {
@@ -69,6 +70,10 @@ main,
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.leaders-content {
+  align-items: flex-start;
 }
 
 .leader-wrapper img {
@@ -154,9 +159,12 @@ form {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1165px) {
+@media screen and (max-width: 1300px) {
   .leaders-content {
     flex-direction: column;
+  }
+  .leader-wrapper {
+    width: 100%;
   }
 }
 
