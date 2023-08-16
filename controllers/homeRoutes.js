@@ -6,15 +6,15 @@ const { User, Pets, Services, Staff, Bookings } = require('../models')
 
 
 
-router.get('/profile', async (req, res) => {
-  const userData = await User.findByPk(1, {include: [{model: Pets}]})
+router.get('/profile', withAuth, async (req, res) => {
+  const userData = await User.findByPk(req.session.user_id, {include: [{model: Pets}]})
   const user = userData.get({ plain: true });
 
   const serviceData = await Services.findAll().catch((err) => res.status(500).json(err))
   const services = serviceData.map((service) => service.get({plain: true}))
 
   const bookingData = await Bookings.findAll({
-    where: {user_id: 1},
+    where: {user_id: req.session.user_id},
     include: {model: User, model: Pets, model: Services, model: Staff}
   })
   const bookings = bookingData.map((booking) => booking.get({plain: true}))
