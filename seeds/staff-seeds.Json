@@ -1,5 +1,8 @@
-[{"staff_name":"Michael Davis","services":"account management","staff_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop"},
-{"staff_name":"Michael Davis","services":"billing","staff_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop"},
-{"staff_name":"Sarah Thompson","services":"sales","staff_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop"},
-{"staff_name":"Emily Johnson","services":"technical assistance","staff_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop"},
-{"staff_name":"Emily Johnson","services":"technical assistance","staff_img":"https://upcdn.io/W142hJk/image/demo/4mEhQB11LD.jpg.crop"}]
+[{"staff_name":"Jonah Hill","services":"account management","staff_img":"https://images.pexels.com/photos/6334588/pexels-photo-6334588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},
+{"staff_name":"Susan Sarandon","services":"billing","staff_img":"https://images.pexels.com/photos/17806561/pexels-photo-17806561/free-photo-of-woman-posing-with-a-dog.jpeg"},
+{"staff_name":"Jeff Goldblum","services":"sales","staff_img":"https://images.pexels.com/photos/7633663/pexels-photo-7633663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},
+{"staff_name":"James Gandolfini","services":"technical assistance","staff_img":"https://images.pexels.com/photos/15226353/pexels-photo-15226353/free-photo-of-man-hugging-pet-duck.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},
+{"staff_name":"Robert De Niro","services":"technical assistance","staff_img":"https://media.istockphoto.com/id/1143038218/photo/a-man-holds-a-rat-in-his-arms-and-smiles.jpg?s=2048x2048&w=is&k=20&c=7h_Mv2U2IZ6qzj2885Go4h3iZ0JBIr0LcqJxkZXEdXA="},
+{"staff_name":"Florence Pugh","services":"Dog Walker, Dog Sitter","staff_img":"https://images.pexels.com/photos/1139793/pexels-photo-1139793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},
+{"staff_name":"Steve Harvey","services":"Dog walker","staff_img":"https://images.pexels.com/photos/17806635/pexels-photo-17806635/free-photo-of-smiling-man-with-white-dog.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},
+{"staff_name":"Miley Cyrus","services":"Dog walking","staff_img":"https://images.pexels.com/photos/17769506/pexels-photo-17769506/free-photo-of-woman-posing-on-a-horse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}]
