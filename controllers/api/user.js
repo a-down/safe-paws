@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 const { User, Pets } = require("../../models");
 
 
@@ -27,8 +28,8 @@ router.post("/", async (req, res) => {
     console.log(req.body)
 
     const newUser = await User.create({
+      email: req.body.email,
       username: req.body.username,
-      email: 'aseva@email.com',
       password: req.body.password,
       address: req.body.address
     });
@@ -60,6 +61,33 @@ router.delete("/user/:id", async (req, res) => {
   const user = await user.findOne({ _id: req.params.id });
   user.destroy();
   return res.json(user);
+});
+
+//login post
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { username: req.body.username } });
+    if (!userData) {
+      res.status(404).json({ message: 'Login failed. Please try again!' });
+      return;
+    }
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      userData.password
+    );
+    if (!validPassword) {
+      res.status(400).json({ message: 'Login failed. Please try again!' });
+      return;
+    }
+
+    req.session.save(()=> {
+      req.session.loggedIn = true;
+  
+      res.json({ user: userData, message: 'You are now logged in!'})
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

@@ -18,15 +18,16 @@ loginLink.on('click', () => {
 
 async function loginFormHandler (event) {
   event.preventDefault()
-  const email = document.querySelector('#username-login-input').value.trim()
+  const username = document.querySelector('#username-login-input').value.trim()
   const password =document.querySelector('#password-login-input').value.trim()
-  console.log(email, password)
-  if (email && password) {
+  console.log(username, password)
+  if (username && password) {
     const response = await fetch('/api/login', {
       method: 'POST',
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' },
     })
+    console.log(response)
   if (response.ok) {
     alert('Logged in');
     window.location.href = "/profile"

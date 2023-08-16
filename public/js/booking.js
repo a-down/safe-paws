@@ -37,7 +37,7 @@ for (let key in dateArr) {
 console.log(dateArr)
 
 
-//struggling with how to start this part
+
 async function beginBooking (event) {
   event.preventDefault();
   const response = await fetch ('/api/staffservices', {
@@ -79,7 +79,7 @@ async function submitBooking (event) {
       service_name: serviceName,
       special_details: specialInst,
       date: date,
-      time: time, //we dont have a time slot in our booking model
+      time: time,
       staff_name: staff
     }),
     headers: {'Content-Type': 'application/json'}
