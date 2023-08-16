@@ -112,7 +112,7 @@ async function updateAccount (event) {
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
-  console.log(email, username, password, address)
+  console.log(email, username, password, address,id)
   
   const response = await fetch(`api/users/${id}`, {
     method: 'PUT',
