@@ -40,6 +40,11 @@ main {
   display: none;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 @media screen and (max-width: 616px) {
   .booking-heading {
     height: 80px;
