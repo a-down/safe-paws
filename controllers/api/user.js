@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const session = require('express-session');
-const { User, Products, Pets } = require("../../models");
+const { User, Pets } = require("../../models");
 
 
 // GET ALL USERS
