@@ -101,16 +101,6 @@ const renderStaff = async (staff) => {
   displayForm2()
 }
 
-
-
-//to create a staff array
-for (let key in staffArr) {
-  let option = document.createElement('option')
-  option.setAttribute('value', staffArr[key])
-  let optionText = document.createTextNode(staffArr[key])
-  option.appendChild(optionText)
-  staffSelect.appendChild(option)
-}
 console.log(staffArr)
 
 const getAndRenderStaff = (serviceId) => beginBooking(serviceId).then(renderStaff)
