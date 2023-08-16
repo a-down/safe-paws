@@ -18,18 +18,20 @@ loginLink.on('click', () => {
 
 async function loginFormHandler (event) {
   event.preventDefault()
-  const email = document.querySelector('#username-signup-input').value.trim()
-  const password =document.querySelector('#password-signup-input').value.trim()
-
-  if (email && password) {
+  const username = document.querySelector('#username-login-input').value.trim()
+  const password =document.querySelector('#password-login-input').value.trim()
+  console.log(username, password)
+  if (username && password) {
     const response = await fetch('/api/login', {
       method: 'POST',
-      body: JSON.stringify({ email,password }),
+      body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' },
     })
+    console.log(response)
   if (response.ok) {
-    alert('Logged in');
-    window.location.href = "/profile"
+    alert('Logged in');   
+    // window.location.href = `/profile/${username}`
+    window.location.href = `/profile/${username}`
   } else {
     alert('Failed to sign in.')
   }
@@ -38,21 +40,22 @@ async function loginFormHandler (event) {
 
 async function signUpFormHandler (event) {
   event.preventDefault()
+  const email = document.querySelector('#email-signup-input').value.trim()
   const username = document.querySelector('#username-signup-input').value.trim()
   const password = document.querySelector('#password-signup-input').value.trim()
   const passwordConfirm = document.querySelector('#password-signup-confirm').value.trim()
   const address = document.querySelector('#address-signup-input').value.trim()
-  console.log(username, password, passwordConfirm, address)
+  console.log(username, password, passwordConfirm, address, email)
 
-  if (password === passwordConfirm && username && address){
+  if (password === passwordConfirm && username && address && email){
     const response = await fetch ('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username: username, password: password, address: address }),
+      body: JSON.stringify({email: email, username: username, password: password, address: address }),
       headers: { 'Content-Type': 'application/json' },
     })
     if (response.ok) {
       alert('Profile created.')
-      window.location.href = "/profile"
+      window.location.href = `/profile/${userId}`
     } else {
       alert('Failed to sign-up. Please try again.')
     }
