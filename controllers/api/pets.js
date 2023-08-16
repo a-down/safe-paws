@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
 
 // POST NEW PET
 router.post("/", async (req, res) => {
-  await Pets.create(req.body).catch((err) => res.status(500).json(err));
+  await Pets.create(req.body);
   return res.status(200).json({message: 'New pet created', newUser: req.body});
 });
 

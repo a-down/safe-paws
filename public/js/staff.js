@@ -9,7 +9,7 @@ document.querySelector("#submit-contact-btn").addEventListener('click', submitCo
 function submitContact (event) {
   event.preventDefault()
   console.log('contact button')
-  let queryString = './staff.html'
+  let queryString = '/'
   location.assign(queryString)
 }
 
