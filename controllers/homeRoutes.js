@@ -30,7 +30,7 @@ router.use('/login', async (req, res) => {
 })
 
 router.use('/booking', async (req, res) => {
-  const userData = await User.findByPk(1, {include: [{model: Pets}]})
+  const userData = await User.findByPk(req.session.user_id, {include: [{model: Pets}]})
   const user = userData.get({ plain: true });
 
   const serviceData = await Services.findAll().catch((err) => res.status(500).json(err))

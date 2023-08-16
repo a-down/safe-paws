@@ -5,6 +5,7 @@ document.querySelector('#next-booking-btn').addEventListener('click', beginBooki
 document.querySelector('#submit-booking-btn').addEventListener('click', submitBooking)
 const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
+const serviceSelect = document.getElementById("service-select")
  
 date = dayjs()
 let dateArr = []
@@ -26,28 +27,26 @@ let staffArr = []
 
 async function beginBooking (event) {
   event.preventDefault();
-  const response = await fetch ('/api/staffservices', {
+  let response = () => 
+    fetch (`/api/services/2`, {
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
   })
-  .then(response => {
-    return response.json ()
-    
-    })
-    .catch(err => {
-    console.error(err);
-    });
+
+  let services = await response()
+  console.log(services)
+
 }
 
-//to create a staff array
-for (let key in staffArr) {
-  let option = document.createElement('option')
-  option.setAttribute('value', staffArr[key])
-  let optionText = document.createTextNode(staffArr[key])
-  option.appendChild(optionText)
-  dateSelect.appendChild(option)
-}
-console.log(staffArr)
+// //to create a staff array
+// for (let key in staffArr) {
+//   let option = document.createElement('option')
+//   option.setAttribute('value', staffArr[key])
+//   let optionText = document.createTextNode(staffArr[key])
+//   option.appendChild(optionText)
+//   dateSelect.appendChild(option)
+// }
+// console.log(staffArr)
 
 
 
