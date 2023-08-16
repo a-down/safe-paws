@@ -30,8 +30,7 @@ async function loginFormHandler (event) {
     console.log(response)
   if (response.ok) {
     alert('Logged in');   
-    // window.location.href = `/profile/${username}`
-    window.location.href = `/profile/${username}`
+    window.location.href = `/profile`
   } else {
     alert('Failed to sign in.')
   }
@@ -55,7 +54,7 @@ async function signUpFormHandler (event) {
     })
     if (response.ok) {
       alert('Profile created.')
-      window.location.href = `/profile/${userId}`
+      window.location.href = `/profile/`
     } else {
       alert('Failed to sign-up. Please try again.')
     }
