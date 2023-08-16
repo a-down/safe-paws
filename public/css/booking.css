@@ -36,6 +36,10 @@ main {
   max-width: 500px;
 }
 
+.booking-form-2 {
+  display: none;
+}
+
 @media screen and (max-width: 616px) {
   .booking-heading {
     height: 80px;
