@@ -27,13 +27,13 @@
     <section class="profile-heading">
       <h1>Profile</h1>
       <div class="profile-pets">
-        {{#if pets.length}}
-        {{#each pets as |pet|}}
+        {{#if user.pets.length}}
+        {{#each user.pets as |pet|}}
         <img src="{{pet.pet_img}}" alt="Image of user pet" height="117px" width="117px"/>
         {{/each}}
         {{/if}}
 
-        {{#unless pets.length}}
+        {{#unless user.pets.length}}
         <button class="button-primary add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add a pet!</button>
         {{/unless}}
       </div>
@@ -42,56 +42,28 @@
 
     <div class="upcoming-wrapper">
       <section class="upcoming-bookings">
+        {{#if bookings.length}}
         <h3>Upcoming Bookings</h3>
+        {{/if}}
+        {{#unless bookings.length}}
+        <h3>Scheduled bookings will appear here.</h3>
+        {{/unless}}
 
         <!-- Swiper -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
+            {{#each bookings as |booking|}}
             <div class="swiper-slide">
               <div>
-                <p>Date: 7/10/23</p>
-                <p>Time: 2:00 PM</p>
-                <p>Pet: Francis</p>
-                <p>Service: Walk</p>
-                <p>Staff: Tessa</p>
+                <p>Date: {{booking.date}}</p>
+                <p>Time: {{booking.time}}</p>
+                <p>Pet: {{booking.pet.pet_name}}</p>
+                <p>Service: {{booking.pet.service.service_name}}</p>
+                <p>Staff: {{booking.staff.staff_name}}</p>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div>
-                <p>Date: 7/10/23</p>
-                <p>Time: 2:00 PM</p>
-                <p>Pet: Francis</p>
-                <p>Service: Walk</p>
-                <p>Staff: Tessa</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <p>Date: 7/10/23</p>
-                <p>Time: 2:00 PM</p>
-                <p>Pet: Francis</p>
-                <p>Service: Walk</p>
-                <p>Staff: Tessa</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <p>Date: 7/10/23</p>
-                <p>Time: 2:00 PM</p>
-                <p>Pet: Francis</p>
-                <p>Service: Walk</p>
-                <p>Staff: Tessa</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <p>Date: 7/10/23</p>
-                <p>Time: 2:00 PM</p>
-                <p>Pet: Francis</p>
-                <p>Service: Walk</p>
-                <p>Staff: Tessa</p>
-              </div>
-            </div>
+            {{/each}}
+            
           </div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -105,11 +77,11 @@
     <section class="account-section">
       <h3>Account Settings</h3>
       <div class="account-information">
-        <p>Email: {{email}}</p>
-        <p>Username: {{username}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Username: {{user.username}}</p>
         <p>Password: ****</p>
-        <p>Address: {{address}}</p>
-        <p>Pets: {{#each pets as |pet|}}{{pet.pet_name}}, {{/each}}</p>
+        <p>Address: {{user.address}}</p>
+        <p>Pets: {{#each user.pets as |pet|}}{{pet.pet_name}}, {{/each}}</p>
         <div class="account-btn-wrapper">
           <button class="button-primary-opp update-account-btn" data-mdb-toggle="modal" data-mdb-target="#updateAccountModal">Update Account</button>
           <button class="button-primary-opp add-pet-btn" data-mdb-toggle="modal" data-mdb-target="#addPetModal">Add Pet</button>
@@ -130,17 +102,17 @@
         </div>
         <div class="modal-body">
           <form>
-            <input type="hidden" name="id" value="{{id}}">
+            <input type="hidden" name="id" value="{{user.id}}">
             <div class="form-outline">
-              <input type="email" id="email-input" class="form-control"  value="{{email}}"/>
+              <input type="email" id="email-input" class="form-control"  value="{{user.email}}"/>
               <label class="form-label" for="email-input">Update Email</label>
             </div>
             <div class="form-outline">
-              <input type="text" id="username-input" class="form-control" value="{{username}}"/>
+              <input type="text" id="username-input" class="form-control" value="{{user.username}}"/>
               <label class="form-label" for="username-input">Update Username</label>
             </div>
             <div class="form-outline">
-              <input class="form-control" id="address-input" rows="4" value="{{address}}" placeholder="{{address}}"></input>
+              <input class="form-control" id="address-input" rows="4" value="{{user.address}}" placeholder="{{user.address}}"></input>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
             <button type="submit" class="form-button" id="update-mdl-btn">Update</button>
@@ -161,7 +133,7 @@
         </div>
         <div class="modal-body">
           <form>
-            <input type="hidden" id="add-pet-id" value="{{id}}">
+            <input type="hidden" id="add-pet-id" value="{{user.id}}">
             <div class="form-outline">
               <input type="text" id="pet-name-input" class="form-control" />
               <label class="form-label" for="pet-name-input">Pet Name</label>
@@ -203,7 +175,7 @@
             <div class="select-outline">
             <select class="form-control" id="pet-to-remove-select">
               <option selected>Choose Pet</option>
-              {{#each pets as |pet|}}
+              {{#each user.pets as |pet|}}
               <option value="{{pet.id}}">{{pet.pet_name}}</option>
               {{/each}}
             </select>
