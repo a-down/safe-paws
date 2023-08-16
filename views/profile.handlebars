@@ -27,9 +27,14 @@
     <section class="profile-heading">
       <h1>Profile</h1>
       <div class="profile-pets">
+        {{#if pets.length}}
         {{#each pets as |pet|}}
         <img src="{{pet.pet_img}}" alt="Image of user pet" height="117px" width="117px"/>
         {{/each}}
+        {{/if}}
+        {{#unless pets.length}}
+        <button>Add Pet</button>
+        {{/unless}}
       </div>
     </section>
 

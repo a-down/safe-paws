@@ -7,7 +7,7 @@ const { User, Pets, Services } = require('../models')
 
 
 router.get('/profile', async (req, res) => {
-  const userData = await User.findByPk(1, {include: [{model: Pets}]})
+  const userData = await User.findByPk(2, {include: [{model: Pets}]})
   const user = userData.get({ plain: true });
   console.log(user)
   res.render('profile', user)
