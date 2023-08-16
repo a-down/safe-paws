@@ -33,7 +33,9 @@ footer img {
  justify-content: space-between;
 }
 
-.header-content, main, .footer-content {
+.header-content, 
+main, 
+.footer-content {
   width: 80%;
 }
 
@@ -41,10 +43,7 @@ footer img {
   gap: 25px;
 }
 
-.alt-paw,
-.alt-fb,
-.alt-insta,
-.alt-snap {
+.alt-paw {
   display: none;
 }
 
@@ -52,7 +51,8 @@ header a, footer a {
   color: black;
 }
 
-header a:hover, footer a:hover {
+header a:hover, 
+footer a:hover {
   color: white;
 }
 
@@ -106,16 +106,21 @@ button {
   line-height: 1;
 }
 
-.button-primary {
+.button-primary,
+.button-primary-opp {
   width: 200px;
   height: 60px;
-  background-color: var(--brand-primary);
   border-radius: 15px;
   font-size: 24px;
-  color: white;
-  border: none;
   box-shadow: var(--brand-shadow);
   padding: 2px;
+}
+
+.button-primary,
+.form-button {
+  background-color: var(--brand-primary);
+  color: white;
+  border: none;
 }
 
 .button-primary:hover, .form-button:hover {
@@ -127,15 +132,9 @@ button {
 }
 
 .button-primary-opp {
-  width: 200px;
-  height: 60px;
   background-color: white;
-  border-radius: 15px;
-  font-size: 24px;
   color: black;
   border: 1px solid var(--brand-primary);
-  box-shadow: var(--brand-shadow);
-  padding: 2px;
 }
 
 .button-primary-opp:hover {
@@ -149,11 +148,8 @@ button {
 .form-button {
   width: 120px;
   height: 40px;
-  background-color: var(--brand-primary);
   border-radius: 5px;
   font-size: 18px;
-  color: white;
-  border: none;
   box-shadow: var(--brand-shadow);
   margin-bottom: 20px;
 }
