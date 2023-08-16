@@ -123,7 +123,7 @@ main,
   justify-content: flex-start;
   align-items: flex-start;
   gap: 18px;
-  min-width: 50%;
+  width: 50%;
   margin-bottom: 33px;
 }
 
@@ -137,6 +137,7 @@ main,
 
 .staff-text {
   align-items: flex-start;
+  width: 70%;
 }
 
 
@@ -164,6 +165,15 @@ form {
     flex-direction: column;
   }
   .leader-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .staff-section {
+    flex-direction: column;
+  }
+  .staff-member-wrapper {
     width: 100%;
   }
 }
