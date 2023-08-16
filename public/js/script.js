@@ -84,10 +84,11 @@ async function addPet (event) {
     const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
+        user_id: 7,
         pet_name: petName,
         pet_type: petType,
         special_details: specialDetails,
-        pet_img: petImg
+        pet_img: petImg[0]
       }),
       headers: {'Content-Type': 'application/json'}
     })
@@ -141,6 +142,7 @@ const logout = async () => {
   });
 
   if (response.ok) {
+    console.log(response)
     document.location.replace('/');
   } else {
     alert('Failed to log out.');
