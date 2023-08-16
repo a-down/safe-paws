@@ -42,7 +42,12 @@
 
     <div class="upcoming-wrapper">
       <section class="upcoming-bookings">
+        {{#if bookings.length}}
         <h3>Upcoming Bookings</h3>
+        {{/if}}
+        {{#unless bookings.length}}
+        <h3>Scheduled bookings will appear here.</h3>
+        {{/unless}}
 
         <!-- Swiper -->
         <div class="swiper mySwiper">
