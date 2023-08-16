@@ -26,7 +26,7 @@ async function removePet (event) {
     headers: {'Content-Type': 'application/json'}
   });
   if (response.ok) {
-    document.location.replace('/profile/')
+    document.location.replace('/profile')
   } else {
     alert(response.statusText)
   }
