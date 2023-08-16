@@ -77,6 +77,7 @@ document.querySelector('#next-booking-btn').addEventListener('click', start)
 
 function displayForm2() {
   $('.booking-form-2').attr('style', 'display: flex')
+  $('footer').attr('style', 'position: static')
 }
 
 

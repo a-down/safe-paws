@@ -60,6 +60,7 @@ main,
   gap: 5px;
   position: relative;
   padding: 16px;
+  width: 50%;
 }
 
 .color-block {
@@ -69,6 +70,10 @@ main,
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.leaders-content {
+  align-items: flex-start;
 }
 
 .leader-wrapper img {
@@ -118,7 +123,7 @@ main,
   justify-content: flex-start;
   align-items: flex-start;
   gap: 18px;
-  min-width: 50%;
+  width: 50%;
   margin-bottom: 33px;
 }
 
@@ -132,6 +137,7 @@ main,
 
 .staff-text {
   align-items: flex-start;
+  width: 70%;
 }
 
 
@@ -154,9 +160,21 @@ form {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1165px) {
+@media screen and (max-width: 1300px) {
   .leaders-content {
     flex-direction: column;
+  }
+  .leader-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .staff-section {
+    flex-direction: column;
+  }
+  .staff-member-wrapper {
+    width: 100%;
   }
 }
 
