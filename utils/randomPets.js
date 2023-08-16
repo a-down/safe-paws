@@ -4,7 +4,7 @@ const getRandomNumber = (min, max) => {
 };
 
 const randomPets = (pets) => {
-  console.log(pets)
+  // console.log(pets)
   let arr = []
   for (i = 0; i < 3; i++) {
     const num = getRandomNumber(0, pets.length-1)
