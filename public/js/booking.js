@@ -1,12 +1,13 @@
 
 
 
-document.querySelector('#next-booking-btn').addEventListener('click', beginBooking)
+
 document.querySelector('#submit-booking-btn').addEventListener('click', submitBooking)
 const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
 const serviceSelect = document.getElementById("service-select")
  
+//day population
 date = dayjs()
 let dateArr = []
 
@@ -22,31 +23,6 @@ for (let key in dateArr) {
   dateSelect.appendChild(option)
 }
 console.log(dateArr)
-
-let staffArr = []
-
-async function beginBooking (event) {
-  event.preventDefault();
-  let response = () => 
-    fetch (`/api/services/2`, {
-    method: 'GET',
-    headers: {'Content-Type': 'application/json'},
-  })
-
-  let services = await response()
-  console.log(services)
-
-}
-
-// //to create a staff array
-// for (let key in staffArr) {
-//   let option = document.createElement('option')
-//   option.setAttribute('value', staffArr[key])
-//   let optionText = document.createTextNode(staffArr[key])
-//   option.appendChild(optionText)
-//   dateSelect.appendChild(option)
-// }
-// console.log(staffArr)
 
 
 
@@ -85,3 +61,38 @@ async function submitBooking (event) {
     alert(response.statusText)
   }
 }
+
+
+//begin and append staff
+
+const beginBooking = () =>
+  fetch('/api/services/2', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+document.querySelector('#next-booking-btn').addEventListener('click', beginBooking)
+
+
+
+let staffArr = []
+
+const renderStaff = async (staff) => {
+  let jsonStaff = await staff.json()
+  console.log(jsonStaff)
+}
+//to create a staff array
+for (let key in staffArr) {
+  let option = document.createElement('option')
+  option.setAttribute('value', staffArr[key])
+  let optionText = document.createTextNode(staffArr[key])
+  option.appendChild(optionText)
+  staffSelect.appendChild(option)
+}
+console.log(staffArr)
+
+const getAndRenderStaff = () => beginBooking().then(renderStaff)
+
+getAndRenderStaff()
