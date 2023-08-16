@@ -140,10 +140,6 @@
               <label class="form-label" for="username-input">Update Username</label>
             </div>
             <div class="form-outline">
-              <input type="password" id="password-input" class="form-control" value="{{password}}"/>
-              <label class="form-label" for="password-input" >Update Password</label>
-            </div>
-            <div class="form-outline">
               <input class="form-control" id="address-input" rows="4" value="{{address}}" placeholder="{{address}}"></input>
               <label class="form-label" for="address-input">Update Address</label>
             </div>
@@ -165,7 +161,7 @@
         </div>
         <div class="modal-body">
           <form>
-            <input type="hidden" name="id" value="{{id}}">
+            <input type="hidden" id="add-pet-id" value="{{id}}">
             <div class="form-outline">
               <input type="text" id="pet-name-input" class="form-control" />
               <label class="form-label" for="pet-name-input">Pet Name</label>

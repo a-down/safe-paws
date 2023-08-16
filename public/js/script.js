@@ -78,13 +78,15 @@ async function addPet (event) {
   const petName = document.querySelector('#pet-name-input').value.trim()
   const specialDetails = document.querySelector('#pet-details-input').value.trim()
   const petImg = imageString
+  const petId = document.querySelector('#add-pet-id')
+  const id = petId.value
   console.log(petName, petType, specialDetails, petImg)
 
   if (petType && petName) {
     const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
-        user_id: 7,
+        user_id: id,
         pet_name: petName,
         pet_type: petType,
         special_details: specialDetails,
@@ -108,18 +110,15 @@ async function updateAccount (event) {
   console.log('update button')
   const email = document.querySelector('#email-input').value.trim()
   const username = document.querySelector('#username-input').value.trim()
-  const password = document.querySelector('#password-input').value.trim()
   const address = document.querySelector('#address-input').value.trim()
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  console.log(email, username, password, address,id)
+  const petId = document.querySelector('#add-pet-id')
+  const id = petId.value
+  console.log(email, username,address,id)
   
   const response = await fetch(`api/users/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       username: username,
-      password: password,
       address: address,
       email: email
     }),
