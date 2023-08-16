@@ -16,14 +16,17 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const bookingData = await Bookings.findAll({
       where: {user_id: req.session.user_id},
-      include: {model: User, model: Pets, model: Services, model: Staff}
+      include: [{model: User}, {model: Pets}, {model: Services}, {model: Staff}]
     })
-    const bookings = bookingData.map((booking) => booking.get({plain: true}))
+    let bookings = bookingData.map((booking) => booking.get({plain: true}))
+
+
 
     console.log(bookings)
     // console.log(user)
 
-    res.render('profile', user)
+    res.render('profile', { user, bookings })
+
   } catch (err) {
     res.status(500).json({message: 'Something went wrong. Please try again.'})
   }
@@ -46,6 +49,7 @@ router.use('/booking', withAuth, async (req, res) => {
     const services = serviceData.map((service) => service.get({plain: true}))
 
     res.render('booking', { user, services })
+
 } catch (err) {
   res.status(500).json({message: 'Something went wrong. Please try again.'})
 }
@@ -69,6 +73,7 @@ router.use('/*', async (req, res) => {
     // console.log(petsArr)
 
     res.render('homepage', {pets: petsArr});
+
   } catch (err) {
     res.status(500).json({message: 'Something went wrong. Please try again.'})
   }
