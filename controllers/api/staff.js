@@ -31,32 +31,48 @@ router.get("/:id", async (req, res) => {
 
 
 
-// NOT DONE YET
+// NOT tested
 router.post("/staff/", async (req, res) => {
   // create a new category
-  const staffdata = req.body;
-  const staff = await staff.create(staffData);
-  return res.json(staff);
+  try {
+    const staff = await Staff.create(req.body)
+    res.status(200).json(staff);
+  }catch(err){
+    res.status(500).json(err)
+   }
 });
 
 
-// NOT DONE YET
+// NOT tested
 router.put("/staff/:id", async (req, res) => {
   // update a category by its `id` value
-  const staffData = req.body;
-  const staff = await staff.findOne({ _id: req.params.id });
-  staff.update(staffData, { _id: req.params.id });
-  await staff.reload();
-  res.json(staff);
+  try{
+    const staffData = await Staff.update(req.body,{
+      where: {
+        id:req.params.id
+      }
+    })
+    res.status(200).json(staffData)
+     }catch(err){
+      res.status(500).json(err)
+     }
 });
 
 
-// NOT DONE YET
+// NOT tested
 router.delete("/staff/:id", async (req, res) => {
   // delete a category by its `id` value
-  const staff = await staff.findOne({ _id: req.params.id });
-  staff.destroy();
-  return res.json(staff);
+  try{
+    const staffData = await Staff.destroy(req.body,{
+      where: {
+        id:req.params.id
+      }
+    })
+    res.status(200).json(staffData)
+     }catch(err){
+      res.status(500).json(err)
+     }
+  
 });
 
 module.exports = router;
