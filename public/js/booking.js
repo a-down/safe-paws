@@ -65,15 +65,19 @@ async function submitBooking (event) {
 
 //begin and append staff
 
-const beginBooking = () =>
-  fetch('/api/services/2', {
+const beginBooking = (id) =>
+  fetch(`/api/services/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
 
-document.querySelector('#next-booking-btn').addEventListener('click', beginBooking)
+document.querySelector('#next-booking-btn').addEventListener('click', start)
+
+function displayForm2() {
+  $('.booking-form-2').attr('style', 'display: flex')
+}
 
 
 
@@ -82,7 +86,23 @@ let staffArr = []
 const renderStaff = async (staff) => {
   let jsonStaff = await staff.json()
   console.log(jsonStaff)
+  let serviceStaff = jsonStaff.service.service_staff
+  console.log(serviceStaff)
+  const newOption = `<option value="1">Tessa</option>`
+
+  serviceStaff.forEach((staff) => {
+    let option = document.createElement('option')
+    option.setAttribute('value', staff.id)
+    let optionText = document.createTextNode(staff.staff_name)
+    option.appendChild(optionText)
+    staffSelect.appendChild(option)
+  })
+
+  displayForm2()
 }
+
+
+
 //to create a staff array
 for (let key in staffArr) {
   let option = document.createElement('option')
@@ -93,6 +113,10 @@ for (let key in staffArr) {
 }
 console.log(staffArr)
 
-const getAndRenderStaff = () => beginBooking().then(renderStaff)
+const getAndRenderStaff = (serviceId) => beginBooking(serviceId).then(renderStaff)
 
-getAndRenderStaff()
+function start(e) {
+  e.preventDefault()
+  console.log(serviceSelect.value)
+  getAndRenderStaff(serviceSelect.value)
+}
