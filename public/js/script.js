@@ -16,7 +16,7 @@ async function removePet (event) {
   console.log('remove button')
   const selected = document.querySelector('#pet-to-remove-select')
   petId = selected.value
-  console.log(petRemoved)
+  console.log(petId)
 
   const response = await fetch(`/api/pets/${petId}`, {
     method: 'DELETE',
@@ -80,7 +80,7 @@ async function addPet (event) {
   const petImg = imageString
   console.log(petName, petType, specialDetails, petImg)
 
-  if (petType && petId) {
+  if (petType && petName) {
     const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
@@ -133,7 +133,7 @@ async function updateAccount (event) {
   }
 }
 
-//logout call
+//logout 
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

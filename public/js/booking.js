@@ -4,22 +4,8 @@
 document.querySelector('#next-booking-btn').addEventListener('click', beginBooking)
 document.querySelector('#submit-booking-btn').addEventListener('click', submitBooking)
 const dateSelect = document.getElementById("date-select")
-/*CLIENT SIDE
-- User chooses pet, service, and special instructions
-* NEXT BUTTON -> 
-  * FETCH for STAFF that provide the requested service
-  * Remove Next Button
-  * Append '.booking-form-2' to '.booking-form'
-- User chooses date and time
-- User has the option to request a staff member
-  - (The default staff for a new Booking should just be 'staff')
-* SUBMIT BUTTON
-  * FETCH POST with data from form
-  * Send user to profile page
-*/
-
-
-//this auto-populates the date select form with the next 14 days 
+const staffSelect = document.getElementById("staff-select")
+ 
 date = dayjs()
 let dateArr = []
 
@@ -36,7 +22,7 @@ for (let key in dateArr) {
 }
 console.log(dateArr)
 
-
+let staffArr = []
 
 async function beginBooking (event) {
   event.preventDefault();
@@ -46,15 +32,24 @@ async function beginBooking (event) {
   })
   .then(response => {
     return response.json ()
-    })
-    .then (data => {console.log((data))
-        resultContainer.innerHTML = ((data).staff.staff_name); //placeholder data to change
-   
+    
     })
     .catch(err => {
     console.error(err);
     });
 }
+
+//to create a staff array
+for (let key in staffArr) {
+  let option = document.createElement('option')
+  option.setAttribute('value', staffArr[key])
+  let optionText = document.createTextNode(staffArr[key])
+  option.appendChild(optionText)
+  dateSelect.appendChild(option)
+}
+console.log(staffArr)
+
+
 
 //submits the information from both forms
 async function submitBooking (event) {
