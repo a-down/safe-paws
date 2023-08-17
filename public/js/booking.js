@@ -5,6 +5,15 @@ document.querySelector('#submit-booking-btn').addEventListener('click', submitBo
 const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
 const serviceSelect = document.getElementById("service-select")
+
+const currentUrl = window.location.href;
+var userId = currentUrl.split('=')[1]
+userId = userId.replace(/%20/g , " ")
+console.log(userId)
+
+
+
+
  
 //day population
 date = dayjs()
@@ -32,13 +41,13 @@ async function submitBooking (event) {
   const petId = selectedPet.value
   const selectedService = document.querySelector("#service-select")
   const serviceId = selectedService.value
-  const specialInst = document.querySelector('#special-instructions-input').value.trim()
   const selectedDate = document.querySelector("#date-select")
   const date = selectedDate.value
   const selectedTime = document.querySelector("#time-select")
   const time = selectedTime.value
   const selectedStaff = document.querySelector("#staff-select")
   const staffId = selectedStaff.value
+ 
 
   const response = await fetch ('/api/bookings', {
     method: 'POST',
@@ -46,7 +55,7 @@ async function submitBooking (event) {
       service_id: serviceId,
       date: date,
       time: time,
-      user_id: 5,
+      user_id: userId,
       pet_id: petId,
       staff_id: staffId,
       service_received: false
@@ -109,3 +118,4 @@ function start(e) {
   console.log(serviceSelect.value)
   getAndRenderStaff(serviceSelect.value)
 }
+
