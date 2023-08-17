@@ -1,4 +1,4 @@
-const userSeeds = require('/seeds/users-seeds.json')
+const userSeeds = require('/users-seeds.json')
 const { User, Pets, Services, Staff, StaffServices, Bookings } = require('../models')
 const petsSeeds = require('/pets-seeds.json')
 const servicesSeeds = require('/services-seeds.json')
