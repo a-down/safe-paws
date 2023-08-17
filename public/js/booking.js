@@ -1,7 +1,6 @@
 
 
 
-
 document.querySelector('#submit-booking-btn').addEventListener('click', submitBooking)
 const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
@@ -22,7 +21,7 @@ for (let key in dateArr) {
   option.appendChild(optionText)
   dateSelect.appendChild(option)
 }
-console.log(dateArr)
+
 
 
 
@@ -40,7 +39,6 @@ async function submitBooking (event) {
   const time = selectedTime.value
   const selectedStaff = document.querySelector("#staff-select")
   const staffId = selectedStaff.value
-  console.log(petId, serviceId, specialInst, date, time, staffId)
 
   const response = await fetch ('/api/bookings', {
     method: 'POST',
@@ -83,15 +81,15 @@ function displayForm2() {
   $('footer').attr('style', 'position: static')
 }
 
-
+$('#next-booking-btn').click(function() {
+  $(this).hide()
+})
 
 let staffArr = []
 
 const renderStaff = async (staff) => {
   let jsonStaff = await staff.json()
-  console.log(jsonStaff)
   let serviceStaff = jsonStaff.service.service_staff
-  console.log(serviceStaff)
   serviceStaff.forEach((staff) => {
     let option = document.createElement('option')
     option.setAttribute('value', staff.id)
@@ -103,7 +101,6 @@ const renderStaff = async (staff) => {
   displayForm2()
 }
 
-console.log(staffArr)
 
 const getAndRenderStaff = (serviceId) => beginBooking(serviceId).then(renderStaff)
 
