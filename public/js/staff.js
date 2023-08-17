@@ -11,8 +11,6 @@ const message = document.getElementById('#contact-message-input')
 
 function submitContact (event) {
   event.preventDefault()
-  if (fullName && email && message)
-  console.log('contact button')
   let queryString = '/'
   location.assign(queryString)
 }

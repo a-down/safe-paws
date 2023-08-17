@@ -24,7 +24,3 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
-
-$('.profile-heading').on('click', () => {
-  console.log('works')
-})
