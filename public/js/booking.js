@@ -1,11 +1,21 @@
 
 
 
-document.querySelector('#next-booking-btn').addEventListener('click', beginBooking)
 document.querySelector('#submit-booking-btn').addEventListener('click', submitBooking)
 const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
+const serviceSelect = document.getElementById("service-select")
+
+const currentUrl = window.location.href;
+var userId = currentUrl.split('=')[1]
+userId = userId.replace(/%20/g , " ")
+console.log(userId)
+
+
+
+
  
+//day population
 date = dayjs()
 let dateArr = []
 
@@ -20,34 +30,7 @@ for (let key in dateArr) {
   option.appendChild(optionText)
   dateSelect.appendChild(option)
 }
-console.log(dateArr)
 
-let staffArr = []
-
-async function beginBooking (event) {
-  event.preventDefault();
-  const response = await fetch ('/api/staffservices', {
-    method: 'GET',
-    headers: {'Content-Type': 'application/json'},
-  })
-  .then(response => {
-    return response.json ()
-    
-    })
-    .catch(err => {
-    console.error(err);
-    });
-}
-
-//to create a staff array
-for (let key in staffArr) {
-  let option = document.createElement('option')
-  option.setAttribute('value', staffArr[key])
-  let optionText = document.createTextNode(staffArr[key])
-  option.appendChild(optionText)
-  dateSelect.appendChild(option)
-}
-console.log(staffArr)
 
 
 
@@ -55,27 +38,27 @@ console.log(staffArr)
 async function submitBooking (event) {
   event.preventDefault()
   const selectedPet = document.querySelector('#pet-select')
-  const petName = selectedPet.value
+  const petId = selectedPet.value
   const selectedService = document.querySelector("#service-select")
-  const serviceName = selectedService.value
-  const specialInst = document.querySelector('#special-instructions-input').value.trim()
+  const serviceId = selectedService.value
   const selectedDate = document.querySelector("#date-select")
   const date = selectedDate.value
   const selectedTime = document.querySelector("#time-select")
   const time = selectedTime.value
   const selectedStaff = document.querySelector("#staff-select")
-  const staff = selectedStaff.value
-  console.log(petName, serviceName, specialInst, date, time, staff)
+  const staffId = selectedStaff.value
+ 
 
-  const response = await fetch ('/api/booking', {
+  const response = await fetch ('/api/bookings', {
     method: 'POST',
     body: JSON.stringify({
-      pet_name: petName,
-      service_name: serviceName,
-      special_details: specialInst,
+      service_id: serviceId,
       date: date,
       time: time,
-      staff_name: staff
+      user_id: userId,
+      pet_id: petId,
+      staff_id: staffId,
+      service_received: false
     }),
     headers: {'Content-Type': 'application/json'}
   })
@@ -85,4 +68,54 @@ async function submitBooking (event) {
   } else {
     alert(response.statusText)
   }
+ }
+
+
+
+
+//begin and append staff
+
+const beginBooking = (id) =>
+  fetch(`/api/services/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+document.querySelector('#next-booking-btn').addEventListener('click', start)
+
+function displayForm2() {
+  $('.booking-form-2').attr('style', 'display: flex')
+  $('footer').attr('style', 'position: static')
 }
+
+$('#next-booking-btn').click(function() {
+  $(this).hide()
+})
+
+let staffArr = []
+
+const renderStaff = async (staff) => {
+  let jsonStaff = await staff.json()
+  let serviceStaff = jsonStaff.service.service_staff
+  serviceStaff.forEach((staff) => {
+    let option = document.createElement('option')
+    option.setAttribute('value', staff.id)
+    let optionText = document.createTextNode(staff.staff_name)
+    option.appendChild(optionText)
+    staffSelect.appendChild(option)
+  })
+
+  displayForm2()
+}
+
+
+const getAndRenderStaff = (serviceId) => beginBooking(serviceId).then(renderStaff)
+
+function start(e) {
+  e.preventDefault()
+  console.log(serviceSelect.value)
+  getAndRenderStaff(serviceSelect.value)
+}
+

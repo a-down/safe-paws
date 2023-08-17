@@ -30,7 +30,7 @@ router.get("/user/:id", async (req, res) => {
 
 // POST NEW BOOKING
 router.post("/", async (req, res) => {
-  await Bookings.create(req.body).catch((err) => res.status(500).json(err));
+  await Bookings.create(req.body)
   return res.json({message: 'New booking created', newBooking: req.body});
 });
 

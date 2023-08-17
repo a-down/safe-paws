@@ -1,11 +1,11 @@
-// const { get } = require("../../controllers/api/bookings");
+
 
 
 
 document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
-document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
+
 
 const addImageBtn = $('#add-pet-image-btn');
 const uploader = Uploader({apiKey: "free"});
@@ -61,6 +61,9 @@ addImageBtn.on('click', async (e) => {
     } else {
       console.log('Pet Picture added!');
       const imageUrl = files.map(editedFile => editedFile.fileUrl);
+      if (imageUrl) {
+        addImageBtn.attr('style', 'background-color: var(--brand-light); color: black').text('Photo added!') 
+      }
       return imageUrl
     }
   }).catch(err => {
@@ -78,13 +81,15 @@ async function addPet (event) {
   const petName = document.querySelector('#pet-name-input').value.trim()
   const specialDetails = document.querySelector('#pet-details-input').value.trim()
   const petImg = imageString
+  const petId = document.querySelector('#add-pet-id')
+  const id = petId.value
   console.log(petName, petType, specialDetails, petImg)
 
   if (petType && petName) {
     const response = await fetch('/api/pets', {
       method: 'POST',
       body: JSON.stringify({
-        user_id: 7,
+        user_id: id,
         pet_name: petName,
         pet_type: petType,
         special_details: specialDetails,
@@ -108,18 +113,15 @@ async function updateAccount (event) {
   console.log('update button')
   const email = document.querySelector('#email-input').value.trim()
   const username = document.querySelector('#username-input').value.trim()
-  const password = document.querySelector('#password-input').value.trim()
   const address = document.querySelector('#address-input').value.trim()
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  console.log(email, username, password, address,id)
+  const petId = document.querySelector('#add-pet-id')
+  const id = petId.value
+  console.log(email, username,address,id)
   
   const response = await fetch(`api/users/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       username: username,
-      password: password,
       address: address,
       email: email
     }),
@@ -152,48 +154,3 @@ const logout = async () => {
 document.querySelector("#logout").addEventListener('click', logout)
 
 
-//takes us to the booking page
-function addBooking () {
-  console.log('booking button')
-  let queryString = './booking.html'
-  location.assign(queryString)
-}
-
-
-// let userBookings 
-
-// const getAndRenderBookings = () => getUserBookings().then(renderBookings)
-
-// const getUserBookings = () =>
-//   fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-//   const renderBookings = async (bookings) => {
-//     let jsonBookings = await bookings.json()
-//     if (bookings)
-//       userBookings.foreach()
-// //not done here, 
-//   }
-
-// // getAndRenderBookings()
-
-
-// const getUserProfile = () =>
-//   fetch(`/api/user/2`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-
-// const renderProfile = async (profile) => {
-//   console.log(profile)
-// }
-
-// const getAndRenderProfile = () => getUserProfile().then(renderProfile)
-
-// getAndRenderProfile()

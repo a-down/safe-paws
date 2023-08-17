@@ -2,7 +2,6 @@
 
 </head>
 
-
 <body>
   <header>
     <div class="header-content">
@@ -32,17 +31,12 @@
 
         <!-- BOOKING FORM PART 1 -->
         <div class="booking-form-1">
-          <!-- POPULATE WITH GET CALL -->
-          <!-- VALUE SHOULD BE PET ID -->
           <label for="pet-select">Which pet is the service for?</label>
           <select name="type" class="form-control" id="pet-select">
             <option selected>Choose Pet</option>
             {{#each user.pets as |pet|}}<option value="{{pet.id}}">{{pet.pet_name}}</option>{{/each}}
-
           </select>
 
-          <!-- POPULATE OPTION VALUES AND TEXT WITH GET CALL -->
-          <!-- OPTION VALUES SHOULD BE SERVICE ID -->
           <label for="service-select">What service is the booking for?</label>
           <select name="type" class="form-control" id="service-select">
             <option selected>Choose Service</option>
@@ -53,6 +47,7 @@
           <textarea class="form-control" id="special-instructions-input" rows="4" placeholder="Special Instructions"></textarea>
 
           <button class="form-button" id="next-booking-btn">Next</button>
+
         </div>
 
         <!-- BOOKING FORM PART 2 -->
@@ -66,41 +61,32 @@
           <label for="time-select">Please choose a time.</label>
           <select name="type" class="form-control" id="time-select">
             <option selected>Choose Time</option>
-            <option value="1">10:00 AM</option>
-            <option value="2">11:00 AM</option>
-            <option value="3">12:00 PM</option>
-            <option value="4">1:00 PM</option>
-            <option value="5">2:00 PM</option>
-            <option value="6">3:00 PM</option>
-            <option value="7">4:00 PM</option>
-            <option value="8">5:00 PM</option>
-            <option value="9">6:00 PM</option>
-            <option value="10">7:00 PM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
           </select>
 
-          <!-- POPULATE WITH STAFF -->
-          <!-- OPTION VALUES SHOULD BE STAFF ID -->
+          <!-- CLIENT JS APPENDS STAFF THAT DO THE SELECTED SERVICE -->
           <label for="staff-select">*Request a staff member.</label>
           <small>*optional - request may be granted based on availability</small>
+
           <select name="type" class="form-control" id="staff-select">
-            <option selected>Choose Service</option>
-            <option value="1">Tessa</option>
-            <option value="2">Tessa</option>
-            <option value="3">Tessa</option>
-            <option value="4">Tessa</option>
+            <option selected>Request Staff</option>
           </select>
           
           <button class="form-button" id="submit-booking-btn">Submit</button>
         </div>
       </form>
     </div>
-
-  
   </main>
     
-
-  <!-- HANDLEBARS CUTTOFF -->
-
   <footer>
     <div class="footer-content">
       <a href="/staff#contact-form">Contact Us</a>
@@ -113,9 +99,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <!-- MDB -->
   <script

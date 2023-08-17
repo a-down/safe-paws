@@ -4,16 +4,13 @@ const staffRoutes = require('./staff');
 const servicesRoutes = require('./services');
 const petRoutes = require('./pets')
 const bookingsRoutes = require('./bookings.js');
-const staffServicesRoutes = require('./staffservices');
-const userLoginRoutes = require('./userLogin')
 
+// login/logout routes are in /users.js
 router.use('/users', userRoutes);
 router.use('/staff', staffRoutes);
 router.use('/services', servicesRoutes);
 router.use('/pets', petRoutes);
 router.use('/bookings', bookingsRoutes);
-router.use('/userLogin' , userLoginRoutes)
-
 
 
 module.exports = router;

@@ -16,7 +16,8 @@ main {
 }
 
 .booking-heading {
-  height: 120px;
+  margin-top: 50px;
+  height: 70px;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -36,8 +37,23 @@ main {
   max-width: 500px;
 }
 
+.booking-form-2 {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 @media screen and (max-width: 616px) {
   .booking-heading {
-    height: 80px;
+    margin-top: 0;
+    align-items: flex-start;
+    min-height: 70px;
+    width: 100%;
+  }
+  .booking-form-wrapper {
+    width: 100%;
   }
 }
