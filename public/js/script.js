@@ -13,7 +13,6 @@ const uploader = Uploader({apiKey: "free"});
 //fetch call once you hit the remove button on modal
 async function removePet (event) {
   event.preventDefault();
-  console.log('remove button')
   const selected = document.querySelector('#pet-to-remove-select')
   petId = selected.value
   console.log(petId)
@@ -57,9 +56,9 @@ addImageBtn.on('click', async (e) => {
     }
    }).then(files => {
     if (files.length === 0) {
-      console.log('No files selected.')
+      // console.log('No files selected.')
     } else {
-      console.log('Pet Picture added!');
+      // console.log('Pet Picture added!');
       const imageUrl = files.map(editedFile => editedFile.fileUrl);
       if (imageUrl) {
         addImageBtn.attr('style', 'background-color: var(--brand-light); color: black').text('Photo added!') 
@@ -73,9 +72,8 @@ addImageBtn.on('click', async (e) => {
 
 //fetch call once you hit the add pet button on modal
 async function addPet (event) {
-  console.log(imageString)
+  // console.log(imageString)
   event.preventDefault();
-  console.log('add button')
   const selected = document.querySelector('#pet-type-select')
   const petType = selected.value
   const petName = document.querySelector('#pet-name-input').value.trim()
@@ -83,7 +81,7 @@ async function addPet (event) {
   const petImg = imageString
   const petId = document.querySelector('#add-pet-id')
   const id = petId.value
-  console.log(petName, petType, specialDetails, petImg)
+  // console.log(petName, petType, specialDetails, petImg)
 
   if (petType && petName) {
     const response = await fetch('/api/pets', {
@@ -110,13 +108,12 @@ async function addPet (event) {
 //fetch call once you hit update account button on modal
 async function updateAccount (event) {
   event.preventDefault();
-  console.log('update button')
   const email = document.querySelector('#email-input').value.trim()
   const username = document.querySelector('#username-input').value.trim()
   const address = document.querySelector('#address-input').value.trim()
   const petId = document.querySelector('#add-pet-id')
   const id = petId.value
-  console.log(email, username,address,id)
+  // console.log(email, username,address,id)
   
   const response = await fetch(`api/users/${id}`, {
     method: 'PUT',
@@ -144,7 +141,7 @@ const logout = async () => {
   });
 
   if (response.ok) {
-    console.log(response)
+    // console.log(response)
     document.location.replace('/');
   } else {
     alert('Failed to log out.');

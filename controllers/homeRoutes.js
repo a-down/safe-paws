@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const randomPets = require('../utils/randomPets')
-const setDays = require('../utils/setDays')
 const withAuth = require('../utils/auth')
 const { User, Pets, Services, Staff, Bookings } = require('../models')
 
@@ -20,7 +19,7 @@ router.get('/profile', withAuth, async (req, res) => {
     })
     let bookings = bookingData.map((booking) => booking.get({plain: true}))
 
-    console.log(bookings)
+    // console.log(bookings)
     // console.log(user)
 
     res.render('profile', { user, bookings })

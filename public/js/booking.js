@@ -62,7 +62,7 @@ async function submitBooking (event) {
     headers: {'Content-Type': 'application/json'}
   })
   if (response.ok) {
-    console.log('Success!')
+    // console.log('Success!')
     document.location.replace('/profile')
   } else {
     alert(response.statusText)
