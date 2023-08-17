@@ -62,12 +62,12 @@ Bookings.belongsTo(User, {
 
 //Staff have many bookings, bookings have one staff
 Staff.hasMany(Bookings, {
-  foreignKey: 'user_id',
+  foreignKey: 'staff_id',
   onDelete: 'CASCADE',
 });
 
 Bookings.belongsTo(Staff, {
-  foreignKey: 'user_id',
+  foreignKey: 'staff_id',
 });
 
 //staff can have many services, services can have many staff
