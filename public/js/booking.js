@@ -30,27 +30,28 @@ console.log(dateArr)
 async function submitBooking (event) {
   event.preventDefault()
   const selectedPet = document.querySelector('#pet-select')
-  const petName = selectedPet.value
+  const petId = selectedPet.value
   const selectedService = document.querySelector("#service-select")
-  const serviceName = selectedService.value
+  const serviceId = selectedService.value
   const specialInst = document.querySelector('#special-instructions-input').value.trim()
   const selectedDate = document.querySelector("#date-select")
   const date = selectedDate.value
   const selectedTime = document.querySelector("#time-select")
   const time = selectedTime.value
   const selectedStaff = document.querySelector("#staff-select")
-  const staff = selectedStaff.value
-  console.log(petName, serviceName, specialInst, date, time, staff)
+  const staffId = selectedStaff.value
+  console.log(petId, serviceId, specialInst, date, time, staffId)
 
-  const response = await fetch ('/api/booking', {
+  const response = await fetch ('/api/bookings', {
     method: 'POST',
     body: JSON.stringify({
-      pet_name: petName,
-      service_name: serviceName,
-      special_details: specialInst,
+      service_id: serviceId,
       date: date,
       time: time,
-      staff_name: staff
+      user_id: 5,
+      pet_id: petId,
+      staff_id: staffId,
+      service_received: false
     }),
     headers: {'Content-Type': 'application/json'}
   })
@@ -60,7 +61,9 @@ async function submitBooking (event) {
   } else {
     alert(response.statusText)
   }
-}
+ }
+
+
 
 
 //begin and append staff
