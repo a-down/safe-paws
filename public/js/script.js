@@ -1,11 +1,11 @@
-// const { get } = require("../../controllers/api/bookings");
+
 
 
 
 document.querySelector('#remove-mdl-btn').addEventListener('click', removePet)
 document.querySelector('#add-mdl-btn').addEventListener('click', addPet)
 document.querySelector('#update-mdl-btn').addEventListener('click', updateAccount)
-document.querySelector('.add-booking-btn').addEventListener('click', addBooking)
+
 
 const addImageBtn = $('#add-pet-image-btn');
 const uploader = Uploader({apiKey: "free"});
@@ -154,48 +154,3 @@ const logout = async () => {
 document.querySelector("#logout").addEventListener('click', logout)
 
 
-//takes us to the booking page
-function addBooking () {
-  console.log('booking button')
-  let queryString = './booking.html'
-  location.assign(queryString)
-}
-
-
-// let userBookings 
-
-// const getAndRenderBookings = () => getUserBookings().then(renderBookings)
-
-// const getUserBookings = () =>
-//   fetch(`/api/bookings/user/${id}`, { //is this the correct route? ...ask mroe about this later
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-//   const renderBookings = async (bookings) => {
-//     let jsonBookings = await bookings.json()
-//     if (bookings)
-//       userBookings.foreach()
-// //not done here, 
-//   }
-
-// // getAndRenderBookings()
-
-
-// const getUserProfile = () =>
-//   fetch(`/api/user/2`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-
-// const renderProfile = async (profile) => {
-//   console.log(profile)
-// }
-
-// const getAndRenderProfile = () => getUserProfile().then(renderProfile)
-
-// getAndRenderProfile()
