@@ -39,7 +39,7 @@ router.get("/:id", async (req, res) => {
 // });
 
 
-// NOT active
+// // NOT tested
 // router.put("/Services/:id", async (req, res) => {
 //   // update a category by its `id` value
 //   try{
@@ -48,14 +48,13 @@ router.get("/:id", async (req, res) => {
 //         id:req.params.id
 //       }
 //     })
-//     res.status(200).json(serviceData)
+//     res.status(200).json(servicesData)
 //      }catch(err){
 //       res.status(500).json(err)
 //      }
 // });
 
-
-// NOT active
+// // NOT tested
 // router.delete("/Services/:id", async (req, res) => {
 //   // delete a category by its `id` value
 //   try{
@@ -64,7 +63,7 @@ router.get("/:id", async (req, res) => {
 //         id:req.params.id
 //       }
 //     })
-//     res.status(200).json(staffData)
+//     res.status(200).json(servicesDataData)
 //      }catch(err){
 //       res.status(500).json(err)
 //      }
