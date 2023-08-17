@@ -20,7 +20,7 @@ router.get('/profile', withAuth, async (req, res) => {
     })
     let bookings = bookingData.map((booking) => booking.get({plain: true}))
 
-    // console.log(bookings)
+    console.log(bookings)
     // console.log(user)
 
     res.render('profile', { user, bookings })
