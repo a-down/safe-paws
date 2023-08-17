@@ -61,6 +61,9 @@ addImageBtn.on('click', async (e) => {
     } else {
       console.log('Pet Picture added!');
       const imageUrl = files.map(editedFile => editedFile.fileUrl);
+      if (imageUrl) {
+        addImageBtn.attr('style', 'background-color: var(--brand-light); color: black').text('Photo added!') 
+      }
       return imageUrl
     }
   }).catch(err => {

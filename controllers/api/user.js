@@ -21,11 +21,8 @@ router.get("/:id", async (req, res) => {
 
 // POST NEW USER
 router.post("/", async (req, res) => {
-  // await User.create(req.body).catch((err) => res.status(500).json(err));
-  // return res.json({message: 'New user created', newUser: req.body});
-
   try {
-    console.log(req.body)
+    // console.log(req.body)
 
     const newUser = await User.create({
       email: req.body.email,
@@ -40,22 +37,20 @@ router.post("/", async (req, res) => {
     });
 
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json(err);
   }
 });
 
 
-// NEEDS TRY CATCH
-// UPATE USER BY ID
+// UPDATE USER BY ID
 router.put("/:id", async (req, res) => {
   await User.update(req.body, {where: {id: req.params.id}} ).catch((err) => res.status(500).json(err));
   res.status(200).json({message: 'User updated', updatedData: req.body});
 });
 
 
-// NEEDS TRY CATCH
-// DELETE USER BY
+// DELETE USER BY ID
 router.delete("/user/:id", async (req, res) => {
   // delete a category by its `id` value
   const user = await user.findOne({ _id: req.params.id });
@@ -63,7 +58,8 @@ router.delete("/user/:id", async (req, res) => {
   return res.json(user);
 });
 
-//login post
+
+// LOGIN/CREATE SESSION
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -87,16 +83,18 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!'})
     })
 
-    console.log(req.session)
+    // console.log(req.session)
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+
+// LOGOUT/DESTROY DESSION
 router.post('/logout', (req, res) => {
-  console.log("here")
+  // console.log("here")
   if (req.session.loggedIn) {
-    console.log("log out now!!!!")
+    // console.log("log out now!!!!")
     req.session.destroy(() => {
       res.json({message: 'here'}).end();
     });
@@ -104,5 +102,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;

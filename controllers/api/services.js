@@ -27,47 +27,47 @@ router.get("/:id", async (req, res) => {
 });
 
 
+// NOT active
+// router.post("/Services/", async (req, res) => {
+//   // create a new category
+//   try {
+//     const services = await Services.create(req.body)
+//     res.status(200).json(service);
+//   }catch(err){
+//     res.status(500).json(err)
+//    }
+// });
 
 
-// NOT tested
-router.post("/Services/", async (req, res) => {
-  // create a new category
-  try {
-    const services = await Services.create(req.body)
-    res.status(200).json(service);
-  }catch(err){
-    res.status(500).json(err)
-   }
-});
+// NOT active
+// router.put("/Services/:id", async (req, res) => {
+//   // update a category by its `id` value
+//   try{
+//     const servicesData = await Services.update(req.body,{
+//       where: {
+//         id:req.params.id
+//       }
+//     })
+//     res.status(200).json(serviceData)
+//      }catch(err){
+//       res.status(500).json(err)
+//      }
+// });
 
-// NOT tested
-router.put("/Services/:id", async (req, res) => {
-  // update a category by its `id` value
-  try{
-    const servicesData = await Services.update(req.body,{
-      where: {
-        id:req.params.id
-      }
-    })
-    res.status(200).json(serviceData)
-     }catch(err){
-      res.status(500).json(err)
-     }
-});
 
-// NOT tested
-router.delete("/Services/:id", async (req, res) => {
-  // delete a category by its `id` value
-  try{
-    const servicesData = await Services.destroy(req.body,{
-      where: {
-        id:req.params.id
-      }
-    })
-    res.status(200).json(staffData)
-     }catch(err){
-      res.status(500).json(err)
-     }
-});
+// NOT active
+// router.delete("/Services/:id", async (req, res) => {
+//   // delete a category by its `id` value
+//   try{
+//     const servicesData = await Services.destroy(req.body,{
+//       where: {
+//         id:req.params.id
+//       }
+//     })
+//     res.status(200).json(staffData)
+//      }catch(err){
+//       res.status(500).json(err)
+//      }
+// });
 
 module.exports = router;
