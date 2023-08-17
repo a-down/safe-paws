@@ -61,7 +61,7 @@ The goal was to create a website for users to log in, add their pets, and schedu
 
 ## Deployed Application (Heroku)
 
-<a href="https://safe-paws-da967720d734.herokuapp.com/" target="_blank">Deployed Website on Heroku</a>
+[Deployed Application on Heroku](https://safe-paws-da967720d734.herokuapp.com/)
 
 ## Photo Sources
 
