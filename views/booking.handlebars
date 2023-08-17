@@ -32,6 +32,9 @@
         <!-- BOOKING FORM PART 1 -->
         <div class="booking-form-1">
           <label for="pet-select">Which pet is the service for?</label>
+
+          <input type="hidden" id="add-booking-id" value="{{user.id}}">
+
           <select name="type" class="form-control" id="pet-select">
             <option selected>Choose Pet</option>
             {{#each user.pets as |pet|}}<option value="{{pet.id}}">{{pet.pet_name}}</option>{{/each}}

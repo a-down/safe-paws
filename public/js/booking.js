@@ -6,10 +6,9 @@ const dateSelect = document.getElementById("date-select")
 const staffSelect = document.getElementById("staff-select")
 const serviceSelect = document.getElementById("service-select")
 
-const currentUrl = window.location.href;
-var userId = currentUrl.split('=')[1]
-userId = userId.replace(/%20/g , " ")
-console.log(userId)
+
+var userId = $('#add-booking-id').val()
+
 
 
 
