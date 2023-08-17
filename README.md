@@ -59,9 +59,6 @@ The goal was to create a website for users to log in, add their pets, and schedu
 ![Login Visual Example](./public/img/readme-visuals/login.png)
 ![Signup Visual Example](./public/img/readme-visuals/signup.png)
 
-
-
-
 ## Deployed Application (Heroku)
 
 [Deployed Application on Heroku](https://safe-paws-da967720d734.herokuapp.com/)
