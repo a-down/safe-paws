@@ -1,5 +1,1 @@
-[{"service_id": 1,"date":"08/25/2023","time": "10:00 AM","user_id": 1,"pet_id": 1, "staff_id": 2, "service_received": "false"},
-{"service_id": 2,"date":"08/27/2023","time": "10:00 AM","user_id": 1,"pet_id": 3, "staff_id": 2, "service_received": "false"},
-{"service_id": 3,"date":"08/29/2023","time": "10:00 AM","user_id": 1,"pet_id": 2, "staff_id": 2, "service_received": "false"},
-{"service_id": 4,"date":"08/30/2023","time": "10:00 AM","user_id": 1,"pet_id": 4, "staff_id": 2, "service_received": "false"},
-{"service_id": 5,"date":"08/28/2023","time": "10:00 AM","user_id": 1,"pet_id": 5, "staff_id": 2, "service_received": "false"}]
+[]
