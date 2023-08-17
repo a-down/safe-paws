@@ -4,7 +4,7 @@ const petsSeeds = require('./pets-seed.json')
 const servicesSeeds = require('./services-seed.json')
 const staffSeeds = require('./staff-seed.json')
 const bookingsSeeds = require('./booking-seed.json')
-const sequelize = require('./connection/config');
+const sequelize = require('../connection/config');
 const staffServicesSeeds = require('./staff-services-seed.json')
 
 const seedAll = async () => {
