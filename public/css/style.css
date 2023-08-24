@@ -16,7 +16,7 @@ footer,
 header, footer {
   background-color: var(--brand-primary);
   height: 60px;
-  width: 100vw;
+  width: 100%;
   box-shadow: var(--brand-shadow);
 }
 
@@ -34,7 +34,6 @@ footer img {
 }
 
 .header-content, 
-main, 
 .footer-content {
   width: 80%;
 }
