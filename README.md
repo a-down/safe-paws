@@ -39,7 +39,16 @@ The goal was to create a website for users to log in, add their pets, and schedu
   ```md
   (you will not be able to access the "Profile" page or the "Booking" page unless you are signed in)
   ```
-
+## Tech Stack
+  - HTML
+  - CSS
+  - JavaScript
+  - Bootstrap
+  - Handlebars
+  - Node.js
+  - Express
+  - MySQL/Sequelize
+  - Heroku
 
 ## Visual Examples
 
